@@ -1,4 +1,4 @@
-# dokuroam
+# DokuRoam
 DokuWiki based implementation of Roam Research
 
 See a tour on youtube: https://www.youtube.com/watch?v=7JOgkxssXks

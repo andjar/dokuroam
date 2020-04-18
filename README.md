@@ -29,7 +29,16 @@ All your notes are saved as plain text files on your server. There are plugins f
 You can add images and ???.
 
 ## Installation
-Clone this project and upload it to your server. Open installation.php, and install as normal.
+Clone this project and upload it to your server. Open install.php, and install DokuWiki as normal.
+
+When you log in as administrator, you should change the following settings:
+
+* phpoksecurity -> Allow embedded PHP? **YES**
+** **Note that this may be a threat to safety**
+* plugin»todo»AllowLinks -> Allow actions to also link to pages with the same name? **Yes**
+* plugin»todo»ActionNamespace -> What namespace should your actions be created in (".:" = Current NS, Blank = Root NS) **Notes**
+* template -> Template aka. the design of the wiki -> "bootstrap3"
+* tpl»bootstrap3»sidebarPosition DokuWiki Sidebar position (left or right) -> right
 
 ## Plugins
 This project builds upon several plugins:

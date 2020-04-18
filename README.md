@@ -34,11 +34,12 @@ Clone this project and upload it to your server. Open install.php, and install D
 When you log in as administrator, you should change the following settings:
 
 * phpoksecurity -> Allow embedded PHP? **YES**
-** **Note that this may be a threat to safety**
+  * **Note that this may be a threat to safety**, use with care
 * plugin»todo»AllowLinks -> Allow actions to also link to pages with the same name? **Yes**
-* plugin»todo»ActionNamespace -> What namespace should your actions be created in (".:" = Current NS, Blank = Root NS) **Notes**
-* template -> Template aka. the design of the wiki -> "bootstrap3"
-* tpl»bootstrap3»sidebarPosition DokuWiki Sidebar position (left or right) -> right
+* plugin»todo»ActionNamespace -> What namespace should your actions be created in (".:" = Current NS, Blank = Root NS)  -> **Notes**
+* template -> Template aka. the design of the wiki -> "**bootstrap3**"
+* tpl»bootstrap3»sidebarPosition DokuWiki Sidebar position (left or right) -> **right**
+* youarehere -> Use hierarchical breadcrumbs (you probably want to disable the above option then) -> **Yes**
 
 ## Plugins
 This project builds upon several plugins:
@@ -47,6 +48,7 @@ This project builds upon several plugins:
 * bootswrapper
 * bureacracy\*
 * dropfiles
+  * Github warns about security risks in this plugin
 * dw2pdf
 * imgpaste
 * include\*
@@ -70,4 +72,21 @@ The starred (\*) plugins have been modified.
 The include plugin does not support including backlinkgs out of the box. 
 
 
+### userall.css
+```css
+#dokuwiki__aside{
+    position: sticky;
+    top: 75px;
+    bottom: 0;
+    overflow: auto;
+}
+
+.dw-sidebar-content legend {
+    display: none;
+}
+
+.dokuwiki div.wrap_todohide{ /* added */
+    display: none;
+}
+```
 

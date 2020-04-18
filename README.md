@@ -28,6 +28,33 @@ All your notes are saved as plain text files on your server. There are plugins f
 ### Media support
 You can add images and ???.
 
+## Installation
+Clone this project and upload it to your server. Open installation.php, and install as normal.
+
+## Plugins
+This project builds upon several plugins:
+
+* 404manager
+* bootswrapper
+* bureacracy\*
+* dropfiles
+* dw2pdf
+* imgpaste
+* include\*
+* linksuggest
+* markdowku
+* monthcal\*
+* newpagetemplate
+* nosidebar
+* pagelist
+* sqlite
+* tag
+* todo
+* wrap
+
+The starred (\*) plugins have been modified.
+
+
 ## Modifications
 
 ### Include backlinks

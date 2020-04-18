@@ -1,0 +1,14 @@
+#dokuwiki__aside{
+    position: sticky;
+    top: 75px;
+    bottom: 0;
+    overflow: auto;
+}
+
+.dw-sidebar-content legend {
+    display: none;
+}
+
+.dokuwiki div.wrap_todohide{ /* added */
+    display: none;
+}

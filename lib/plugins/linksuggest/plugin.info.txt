@@ -1,0 +1,7 @@
+base    linksuggest
+author  lisps, peterfromearth
+email   
+date    2020-02-29
+name    linksuggest Plugin
+desc    ajax autosuggest for links
+url     http://www.dokuwiki.org/plugin:linksuggest

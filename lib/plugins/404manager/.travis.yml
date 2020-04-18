@@ -1,0 +1,16 @@
+# Config file for travis-ci.org
+
+language: php
+php:
+    - "7.2"
+    - "7.1"
+env:
+    - DOKUWIKI=stable
+#  - DOKUWIKI=master not needed
+
+before_install: wget https://raw.github.com/splitbrain/dokuwiki-travis/master/travis.sh
+install: sh travis.sh
+script: cd _test && phpunit --stderr --group plugin_404manager
+notifications:
+  email:
+    - gerardnico@gmail.com

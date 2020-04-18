@@ -1,0 +1,8 @@
+# General Plugin Info do not edit
+base   pagelist
+author Matthias Schulte, Michael Hamann, Michael Klier, Gina Haeussge
+email  michael@content-space.de
+date   2017-08-24
+name   Pagelist Plugin
+desc   Lists pages in a nice formatted way
+url    http://www.dokuwiki.org/plugin:pagelist

@@ -1,0 +1,8 @@
+base  newpagetemplate
+author Jason Grout, modified: Myron Turner
+email turnermm02@shaw.ca
+date  2018-05-22
+name  newpagetemplate Plugin
+desc  load namespace-style template into new file from URL
+url http://www.dokuwiki.org/plugin:newpagetemplate
+

@@ -1,0 +1,9 @@
+/*
+** @date 20130407 Leo Eibler <dokuwiki@sprossenwanne.at> \n
+**                add todouser for user assignment css class \n
+*/
+span.todohlght:hover{background:#DDD; cursor:default; }
+span.todouser { font-size: x-small; cursor:default; font-style: italic; padding-left: 3px; padding-right: 3px; margin-right: 4px; }
+span.tododates { font-size: x-small; padding-left: 3px; padding-right: 3px; margin-right: 4px;  }
+span.todostarted { background:#EEA; font-weight: bold; }
+span.tododue { background:#EAA; font-weight: bold; }

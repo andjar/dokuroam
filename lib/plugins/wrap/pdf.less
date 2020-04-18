@@ -1,0 +1,20 @@
+/********************************************************************
+Styles used in PDFs by the DW2PDF plugin (in addition to all.css, and
+the DW2PDF plugin also includes style.css via the 'usestyles' option)
+********************************************************************/
+
+@import 'print_or_pdf.less';
+
+.dokuwiki {
+
+/*____________ only print ____________*/
+/* due to including style.css, these need to be overwritten again */
+
+div.wrap_onlyprint {
+    display: block;
+}
+span.wrap_onlyprint {
+    display: inline;
+}
+
+} /* /.dokuwiki */

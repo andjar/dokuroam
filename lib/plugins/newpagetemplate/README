@@ -1,0 +1,9 @@
+This updates the newpagetmplate plugin to handle the new Events for Templates.
+It handles both COMMON_PAGE_FROMTEMPLATE (implemented 2010-03-10) and 
+COMMON_PAGETPL_LOAD, which replaces it (2011-02-03).
+
+As well, this current version supports HTML_PAGE_FROMTEMPLATE, which preceds both of the above.
+
+See http://www.dokuwiki.org/plugin:newpagetemplate for further details.
+
+

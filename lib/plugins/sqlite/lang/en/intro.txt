@@ -1,0 +1,3 @@
+====== SQLite Access ======
+
+This screen lets you interface existing SQLite databases directly. Just select the databases from the table of contents and enter your SQL commands.

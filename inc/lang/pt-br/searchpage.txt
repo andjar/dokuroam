@@ -1,0 +1,4 @@
+====== Pesquisa ======
+
+Você pode encontrar os resultados da sua pesquisa abaixo. @CREATEPAGEINFO@
+

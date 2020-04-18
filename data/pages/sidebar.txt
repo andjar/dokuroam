@@ -1,0 +1,18 @@
+~~NOCACHE~~
+
+<form>
+action template ! ":notes"
+
+fieldset "Note"
+textarea "Note" !
+hidden "From" "=<php> echo getID(); </php>"
+yesno "Todo"
+addpage tmplts_sidebar "%Y%m%d-%H%M%S"
+
+fieldset "Todo" "Todo"
+date "Due" =%Y-%m-%d
+addpage tmplts_todo_sidebar "%Y%m%d-%H%M%S"
+
+fieldset
+submit
+</form>

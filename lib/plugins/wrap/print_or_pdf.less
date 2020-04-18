@@ -1,0 +1,31 @@
+/********************************************************************
+Styles shared between print.css and pdf.css
+********************************************************************/
+
+.dokuwiki {
+
+/* miscellaneous
+********************************************************************/
+
+/*____________ pagebreak ____________*/
+
+.wrap_pagebreak {
+    break-after: page; /* CSS 3 */
+    page-break-after: always; /* CSS 2.1 */
+}
+
+/*____________ avoid page break ____________*/
+/* not yet supported by most browsers */
+
+.wrap_nopagebreak {
+    break-inside: avoid; /* CSS 3 */
+    page-break-inside: avoid; /* CSS 2.1 */
+}
+
+/*____________ no print ____________*/
+
+.wrap_noprint {
+    display: none;
+}
+
+} /* /.dokuwiki */

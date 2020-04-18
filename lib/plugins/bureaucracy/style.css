@@ -1,0 +1,101 @@
+/* Success message */
+.dokuwiki div.bureaucracy__plugin {
+    width: 50%;
+    font-size: 120%;
+    padding: 2em;
+}
+
+/* Form */
+.dokuwiki form.bureaucracy__plugin {
+    width: 100%;
+    text-align: center;
+    margin: 2em 0;
+    display: block;
+}
+
+.dokuwiki form.bureaucracy__plugin p {
+    font-size: 90%;
+    margin-top: 0.5em;
+}
+
+.dokuwiki form.bureaucracy__plugin fieldset {
+    width: 80%;
+    text-align: left;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.dokuwiki form.bureaucracy__plugin label {
+    display: block;
+    text-align: right;
+    line-height: 2em;
+}
+
+.dokuwiki form.bureaucracy__plugin label>span {
+    display: inline-block;
+    width: 47%;
+    line-height: normal;
+}
+.dokuwiki form.bureaucracy__plugin label.textareafield {
+    text-align: left;
+}
+.dokuwiki form.bureaucracy__plugin label.textareafield>span {
+    width: 100%;
+}
+
+.dokuwiki form.bureaucracy__plugin label input.edit,
+.dokuwiki form.bureaucracy__plugin label select {
+    width: 50%;
+}
+.dokuwiki form.bureaucracy__plugin label input.datepicker,
+.dokuwiki form.bureaucracy__plugin label input.timefield {
+    width: 25%;
+    margin-right: 25%;
+}
+
+.dokuwiki form.bureaucracy__plugin label textarea.edit {
+    width: 100%;
+}
+.dokuwiki form.bureaucracy__plugin label input[type=checkbox] {
+    width: 5%;
+    margin-right: 45%;
+}
+
+.dokuwiki form.bureaucracy__plugin input.button {
+    margin: 3px 0 3px 50%;
+    display: block;
+}
+.dokuwiki form.bureaucracy__plugin label.radiolabel span{
+    width: 100%;
+    text-align: left;
+}
+.dokuwiki form.bureaucracy__plugin label input[type=radio]~span {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+    line-height: normal;
+}
+
+.dokuwiki form.bureaucracy__plugin label.bureaucracy_error span {
+    color: #F00;
+}
+
+.dokuwiki form.bureaucracy__plugin #plugin__captcha_wrapper label {
+    text-align: left;
+}
+/*responsive - small screen*/
+@media (max-width: 480px) {
+    .dokuwiki form.bureaucracy__plugin label {
+        text-align: left;
+    }
+    .dokuwiki form.bureaucracy__plugin label>span {
+        width: 100%;
+    }
+    .dokuwiki form.bureaucracy__plugin input.button {
+        margin-left: 0;
+    }
+    .dokuwiki form.bureaucracy__plugin label .edit,
+    .dokuwiki form.bureaucracy__plugin label select {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,57 @@
+div.dokuwiki table.pagelist,
+div.dokuwiki table.ul {
+  border: 0;
+  padding: 0;
+  border-spacing: 0;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+}
+
+div.dokuwiki table.pagelist tr {
+  border-top: 1px solid __border__;
+  border-bottom: 1px solid __border__;
+}
+
+div.dokuwiki table.pagelist th,
+div.dokuwiki table.pagelist td {
+  padding: 1px 1em 1px 0;
+  border: 0;
+}
+
+div.dokuwiki table.ul th,
+div.dokuwiki table.ul td {
+  padding: 0 1em 0 0;
+  border: 0;
+}
+
+div.dokuwiki table.ul ul {
+  margin: 0 0 0 1.5em;
+}
+
+div.dokuwiki table.pagelist th,
+div.dokuwiki table.ul th {
+  background-color: __background_alt__;
+}
+
+div.dokuwiki th.page,
+div.dokuwiki th.date,
+div.dokuwiki th.user,
+div.dokuwiki th.desc,
+div.dokuwiki th.comments,
+div.dokuwiki th.linkbacks,
+div.dokuwiki th.tags,
+div.dokuwiki th.diff,
+div.dokuwiki td.date,
+div.dokuwiki td.user,
+div.dokuwiki td.desc,
+div.dokuwiki td.comments,
+div.dokuwiki td.linkbacks,
+div.dokuwiki td.tags,
+div.dokuwiki td.diff {
+  color: __text_neu__;
+  font-size: 80%;
+}
+
+div.dokuwiki td.date {
+  text-align: left;
+}

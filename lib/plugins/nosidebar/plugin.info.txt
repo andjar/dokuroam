@@ -1,0 +1,7 @@
+base   nosidebar
+author Matthias Schulte
+email  dokuwiki@lupo49.de
+date   2013-07-14
+name   nosidebar plugin
+desc   Disables DokuWikis internal sidebar for individual pages
+url    http://dokuwiki.org/plugin:nosidebar

@@ -1,0 +1,3 @@
+{{monthcal:create_prev_next_links=yes,display_weeks=yes,namespace=journal}}
+
+~~NOCACHE~~

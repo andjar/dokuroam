@@ -1,0 +1,16 @@
+~~NOSIDEBAR~~
+<form>
+action template ! ":notes"
+
+fieldset "Note"
+textarea "Note" !
+yesno "Todo"
+addpage tmplts "%Y%m%d-%H%M%S"
+
+fieldset "Todo" "Todo"
+date "Due" =%Y-%m-%d
+addpage tmplts_todo "%Y%m%d-%H%M%S"
+
+fieldset
+submit
+</form>

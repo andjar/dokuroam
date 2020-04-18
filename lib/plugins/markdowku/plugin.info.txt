@@ -1,0 +1,7 @@
+base   markdowku
+author Julian Fagir
+email  gnrp@komkon2.de
+date   2017-02-19
+name   Markdowku
+desc   Integrates Markdown into Dokuwiki syntax
+url    http://www.tolledomain.ch/dokuwiki/doku.php?id=projects:markdowku

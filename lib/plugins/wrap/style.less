@@ -1,0 +1,215 @@
+/********************************************************************
+Screen Styles for the Wrap Plugin (additional to all.css)
+********************************************************************/
+
+.dokuwiki {
+
+/* box
+********************************************************************/
+
+.wrap_box {
+    background: @ini_background_alt;
+    color: @ini_text;
+}
+div.wrap_box,
+div.wrap_danger,
+div.wrap_warning,
+div.wrap_caution,
+div.wrap_notice,
+div.wrap_safety {
+    padding: 1em 1em .5em;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+}
+span.wrap_box,
+span.wrap_danger,
+span.wrap_warning,
+span.wrap_caution,
+span.wrap_notice,
+span.wrap_safety {
+    padding: 0 .3em;
+}
+
+/*____________ notes with icons ____________*/
+
+/* general styles for all note divs */
+div.wrap_info,
+div.wrap_important,
+div.wrap_alert,
+div.wrap_tip,
+div.wrap_help,
+div.wrap_todo,
+div.wrap_download {
+    padding: 1em 1em .5em 70px;
+    margin-bottom: 1.5em;
+    min-height: 68px;
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
+    color: inherit;
+    overflow: hidden;
+}
+/* general styles for all note spans */
+span.wrap_info,
+span.wrap_important,
+span.wrap_alert,
+span.wrap_tip,
+span.wrap_help,
+span.wrap_todo,
+span.wrap_download {
+    padding: 0 2px 0 20px;
+    min-height: 20px;
+    background-position: 2px 50%;
+    background-repeat: no-repeat;
+    color: inherit;
+}
+
+/* sorry for icons glued to the right side, but there is currently no way
+     to make this look good without adjusting the images themselves */
+[dir=rtl] div.wrap_info,
+[dir=rtl] div.wrap_important,
+[dir=rtl] div.wrap_alert,
+[dir=rtl] div.wrap_tip,
+[dir=rtl] div.wrap_help,
+[dir=rtl] div.wrap_todo,
+[dir=rtl] div.wrap_download {
+    padding: 1em 60px .5em 1em;
+    background-position: right 50%;
+}
+[dir=rtl] span.wrap_info,
+[dir=rtl] span.wrap_important,
+[dir=rtl] span.wrap_alert,
+[dir=rtl] span.wrap_tip,
+[dir=rtl] span.wrap_help,
+[dir=rtl] span.wrap_todo,
+[dir=rtl] span.wrap_download {
+    padding: 0 18px 0 2px;
+    background-position: right 50%;
+}
+
+/*____________ info ____________*/
+.wrap_info { background-color: #d1d7df; }
+.wrap__dark.wrap_info { background-color: #343e4a; }
+div.wrap_info { background-image: url(images/note/48/info.png); }
+span.wrap_info { background-image: url(images/note/16/info.png); }
+
+/*____________ important ____________*/
+.wrap_important { background-color: #ffd39f; }
+.wrap__dark.wrap_important { background-color: #6c3b00; }
+div.wrap_important { background-image: url(images/note/48/important.png); }
+span.wrap_important { background-image: url(images/note/16/important.png); }
+
+/*____________ alert ____________*/
+.wrap_alert { background-color: #ffbcaf; }
+.wrap__dark.wrap_alert { background-color: #6b1100; }
+div.wrap_alert { background-image: url(images/note/48/alert.png); }
+span.wrap_alert { background-image: url(images/note/16/alert.png); }
+
+/*____________ tip ____________*/
+.wrap_tip { background-color: #fff79f; }
+.wrap__dark.wrap_tip { background-color: #4a4400; }
+div.wrap_tip { background-image: url(images/note/48/tip.png); }
+span.wrap_tip { background-image: url(images/note/16/tip.png); }
+
+/*____________ help ____________*/
+.wrap_help { background-color: #dcc2ef; }
+.wrap__dark.wrap_help { background-color: #3c1757; }
+div.wrap_help { background-image: url(images/note/48/help.png); }
+span.wrap_help { background-image: url(images/note/16/help.png); }
+
+/*____________ todo ____________*/
+.wrap_todo { background-color: #c2efdd; }
+.wrap__dark.wrap_todo { background-color: #17573e; }
+div.wrap_todo { background-image: url(images/note/48/todo.png); }
+span.wrap_todo { background-image: url(images/note/16/todo.png); }
+
+/*____________ download ____________*/
+.wrap_download { background-color: #d6efc2; }
+.wrap__dark.wrap_download { background-color: #345717; }
+div.wrap_download { background-image: url(images/note/48/download.png); }
+span.wrap_download { background-image: url(images/note/16/download.png); }
+
+
+/*____________ safety notes ____________*/
+
+.wrap_danger {
+    background-color: #c00;
+    color: #fff;
+}
+.wrap_warning {
+    background-color: #f60;
+    color: #000;
+}
+.wrap_caution {
+    background-color: #ff0;
+    color: #000;
+}
+.wrap_notice {
+    background-color: #06f;
+    color: #fff;
+}
+.wrap_safety {
+    background-color: #090;
+    color: #fff;
+}
+
+.wrap_danger *,
+.wrap_warning *,
+.wrap_caution *,
+.wrap_notice *,
+.wrap_safety * {
+    color: inherit !important;
+}
+
+
+/* mark
+********************************************************************/
+
+.wrap_hi {
+    background-color: #ff9;
+    overflow: hidden;
+}
+.wrap__dark.wrap_hi {
+    background-color: #4e4e0d;
+}
+
+
+/* miscellaneous
+********************************************************************/
+
+/*____________ spoiler ____________*/
+
+.wrap_spoiler {
+    background-color: @ini_background !important;
+    color: @ini_background !important;
+    border: 1px dotted red;
+}
+
+/*____________ only print ____________*/
+
+.wrap_onlyprint {
+    display: none;
+}
+
+/*____________ tabs ____________*/
+/* in addition to template styles */
+
+.plugin_wrap.tabs {
+    margin-bottom: 1.4em;
+}
+
+/*____________ button-style link ____________*/
+
+.wrap_button a:link,
+.wrap_button a:visited {
+    background-color: @ini_background_alt;
+}
+.wrap_button a:link:hover,
+.wrap_button a:visited:hover,
+.wrap_button a:link:focus,
+.wrap_button a:visited:focus,
+.wrap_button a:link:active,
+.wrap_button a:visited:active {
+    background-color: @ini_background_neu;
+}
+
+} /* /.dokuwiki */

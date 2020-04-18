@@ -1,0 +1,3 @@
+====== SQLite Přístup ======
+
+Tato obrazovka umožňuje přímý přístup k existujícím SQLite databázím. Vyberte databázi v tabulce obsahu a zadejte své SQL příkazy.

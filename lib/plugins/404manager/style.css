@@ -1,0 +1,116 @@
+.redirect-manager .managerreference {
+    font-size: 95%;
+    clear: both;
+    bottom: 5px;
+    right: 15px;
+    position: absolute;
+    font-style: italic;
+}
+
+/* Admin page Css
+   comes from Bootstrap
+*/
+
+.redirect-manager.table-responsive {
+
+    box-sizing: border-box;
+    min-height: 0.01%;
+    overflow-x: auto;
+    display: block;
+    unicode-bidi: -moz-isolate;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    font-family: sans-serif;
+
+}
+
+.redirect-manager.table {
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.redirect-manager.table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: border-box;
+    display: table;
+    text-indent: 0;
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+
+/* alert are messages that appears when the 404 manager does something */
+.redirect-manager.alert-warning {
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, #fcf8e3 0px, #f8efc0 100%);
+    background-repeat: repeat-x;
+    background-color: #fcf8e3;
+    border-bottom-color: #faebcc;
+    border-left-color: #faebcc;
+    border-right-color: #faebcc;
+    border-top-color: #faebcc;
+    color: #8a6d3b;
+    position: relative;
+}
+
+.redirect-manager.alert-success {
+    background-image: linear-gradient(to bottom, #dff0d8 0px, #c8e5bc 100%);
+    background-repeat: repeat-x;
+    border-bottom-color: #b2dba1;
+    border-left-color: #b2dba1;
+    border-right-color: #b2dba1;
+    border-top-color: #b2dba1;
+    background-color: #dff0d8;
+    color: #3c763d;
+    position: relative;
+}
+
+.redirect-manager.alert {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: transparent;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: transparent;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: transparent;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    display: block;
+    unicode-bidi: -moz-isolate;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 30px;
+}

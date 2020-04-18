@@ -1,0 +1,28 @@
+div.dokuwiki div.tags,
+div.dokuwiki div.tagstop {
+  font-size: 95%;
+  text-align: right;
+}
+
+div.dokuwiki div.tags {
+  border-top: 2px dotted __border__;
+  clear: both;
+  margin-bottom: 1.4em;
+}
+
+div.dokuwiki div.tagstop {
+  border-bottom: 2px dotted __border__;
+  margin-top: -1.3em;
+  margin-bottom: .4em;
+}
+
+div.dokuwiki div.tags span,
+div.dokuwiki div.tagstop span {
+  background: transparent url(images/tag.gif) 0px 2px no-repeat;
+  padding: 1px 0px 1px 17px;
+}
+
+/* make it easier to select the +/- checkboxes in the tagsearch table by making them block elements */
+div.dokuwiki form.plugin__tag_search label.plus, div.dokuwiki form.plugin__tag_search label.minus {
+  display: block;
+}

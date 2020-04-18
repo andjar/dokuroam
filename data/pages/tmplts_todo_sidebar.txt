@@ -1,0 +1,7 @@
+<todo start:%Y-%m-%d due:@@Due@@>%Y%m%d @@Note@@</todo>
+
+From: [[@@From@@]]
+
+<WRAP todohide>@@Note@@</WRAP>
+
+{{tag>note todo %Y%m%d}}

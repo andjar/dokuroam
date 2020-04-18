@@ -1,0 +1,3 @@
+====== SQLite Erişimi ======
+
+Bu ekran, SQlite veritabanları ile doğrudan etkileşim kurmanıza olanak sağlar. Sadece içerik tablosundan veritabanlarını seçin ve SQL komutlarınızı girin.

@@ -1,0 +1,38 @@
+<form>
+action   template userstpl users:%Y:@@What's your Name?@@:start
+
+Fieldset "A set of fields"
+Textbox  "Employee Name" "=Your Name"
+number   "Your Age" >13 <99
+email    "Your E-Mail Address"
+textbox  "Occupation (optional)" !
+password "Some password"
+file     "File1"
+
+fieldset "HTML Checks  <bold>bang</bold>"  "<bold>bang</bold>" "<bold>bang</bold>"
+textbox  "HTML check 1 <bold>bang</bold>"  "=<bold>bang</bold>"
+password "HTML check 2 <bold>bang</bold>"  "=<bold>bang</bold>"
+textarea "HTML check 3 <bold>bang</bold>"  "=<bold>bang</bold>"
+static   "HTML check 4 <bold>bang</bold>"
+wiki     "HTML check 5 <bold>bang</bold>"
+
+fieldset "even more fields"
+select   "Please select an option" "Peaches|Apples|Oranges"
+static   "Some static text that could be an agreement"
+yesno    "Read the agreement?"
+textarea "Tell me about your self"
+textbox  "You need to write 'agree' here" /^agree$/
+
+fieldset "Create Your User Page"
+select   "What's your Continent?" "Europe|N. America|S. America|Asia|Australia"
+textbox  "What's your Name?"
+textarea "Enter a short bio" !
+yesno    "Do have publication?"
+
+fieldset "Add your publications" "Do have publication?"
+textarea "Publications:"
+addpage   users:publicationtemplate publications
+
+fieldset "Finish"
+submit   "Submit Query"
+</form>

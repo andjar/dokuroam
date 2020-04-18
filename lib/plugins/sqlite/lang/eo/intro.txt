@@ -1,0 +1,3 @@
+====== SQLite-Aliro ======
+
+Tiu ĉi paĝo ebligas aliri ekzistantajn SQLite-datumbazojn rekte. Simple selektu la datumbazojn de la enhavtabelo kaj enmetu viajn SQL-komandojn.

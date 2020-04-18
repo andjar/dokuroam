@@ -1,0 +1,28 @@
+/**
+ * dw2pdf export_pdf pagetool icon
+ */
+
+/* export icon */
+#dokuwiki__pagetools ul li a.export_pdf {
+    background-position: right 0;
+}
+#dokuwiki__pagetools ul li a.export_pdf:before {
+    content: url(pagetools-pdfexport-sprite.png);
+    margin-top: 0;
+}
+#dokuwiki__pagetools:hover ul li a.export_pdf,
+#dokuwiki__pagetools ul li a.export_pdf:focus,
+#dokuwiki__pagetools ul li a.export_pdf:active {
+    background-image: url(pagetools-pdfexport-sprite.png);
+}
+#dokuwiki__pagetools ul li a.export_pdf:hover,
+#dokuwiki__pagetools ul li a.export_pdf:active,
+#dokuwiki__pagetools ul li a.export_pdf:focus {
+    background-position: right -45px;
+}
+/*Keep pagetool icon on left side for rtl languages*/
+[dir=rtl] #dokuwiki__pagetools ul li a.export_pdf:hover,
+[dir=rtl] #dokuwiki__pagetools ul li a.export_pdf:active,
+[dir=rtl] #dokuwiki__pagetools ul li a.export_pdf:focus {
+    background-position: left -45px;
+}

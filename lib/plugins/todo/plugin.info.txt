@@ -1,0 +1,7 @@
+base   todo
+author Leo Eibler, Christian Marg, Markus Gschwendt
+email  dokuwiki@sprossenwanne.at, marg@rz.tu-clausthal.de
+date   2020-02-06
+name   ToDo
+desc   Create a checkbox based todo list with optional user assignment (by using <todo>This is a ToDo</todo>). In combination with dokuwiki searchpattern plugin it is a lightweight task list management system.
+url    https://www.dokuwiki.org/plugin:todo

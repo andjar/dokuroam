@@ -1,0 +1,35 @@
+#plugin_dropfiles_uploadwidget {
+
+    .dropfiles_file_upload_bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+
+        .filename {
+            width: 50%;
+        }
+
+        .progressbar {
+            width: 45%;
+
+            .ui-progressbar-value {
+                background: #cccccc;
+            }
+        }
+    }
+}
+
+.dropfiles.ui-dialog {
+    font-size: 1.32rem;
+
+    form {
+        display: flex;
+        align-items: center;
+
+        input[name="filename"] {
+            flex-grow: 1;
+        }
+    }
+
+}

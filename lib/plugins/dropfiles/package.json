@@ -1,0 +1,37 @@
+{
+  "name": "dropfiles",
+  "keywords": [
+    "dokuwiki",
+    "dokuwiki-plugin"
+  ],
+  "version": "1.0.0",
+  "description": "DokuWiki plugin to enable file upload by drag'n'drop into the page edit area",
+  "repository": "https://github.com/cosmocode/dokuwiki-plugin-dropfiles",
+  "author": "Michael Große <dokuwiki@cosmocode.de>",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-compat": "^1.0.4",
+    "stylelint": "^8.2.0",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-webpack-plugin": "^0.9.0",
+    "webpack": "^3.5.6"
+  },
+  "scripts": {
+    "dev": "webpack -d",
+    "watch": "webpack -dw",
+    "eslint": "NODE_ENV=production eslint src/"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 edge versions",
+    "last 2 safari versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 ios versions",
+    "ie 11"
+  ]
+}

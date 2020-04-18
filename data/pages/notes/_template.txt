@@ -1,0 +1,7 @@
+# @!PAGE@
+
+
+
+## Backlinks
+{{blinks>@ID@&permalink}}
+{{tag>notetopic}}

@@ -1,0 +1,47 @@
+div.dokuwiki table.monthcal {
+	font-size: 12px;
+	font-family: Verdana;
+	margin: 10px;
+}
+div.dokuwiki table.monthcal tr.description,
+div.dokuwiki table.monthcal tr.description td {
+	border: 0;
+	background: none;
+}
+div.dokuwiki table.monthcal tr.description td.month {
+	text-align: left;
+}
+div.dokuwiki table.monthcal tr.description td.year {
+	text-align: right;
+	font-weight: bolder;
+}
+
+div.dokuwiki table.monthcal tr td,
+div.dokuwiki table.monthcal tr th {
+	text-align: center;
+}
+
+div.dokuwiki table.monthcal tr th {
+	text-align: center;
+	font-weight: bold;
+	background-color: #eee;
+}
+
+div.dokuwiki table.monthcal.left {
+	float: left;
+}
+
+div.dokuwiki table.monthcal.right{
+	float: right;
+}
+
+div.dokuwiki table.monthcal td.today {
+	font-weight: bolder;
+}
+
+.borderless {
+	border: 0;
+}
+.withborder {
+	border: 1px solid #ccc;
+}

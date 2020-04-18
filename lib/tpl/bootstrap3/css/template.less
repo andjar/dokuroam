@@ -1,0 +1,886 @@
+/*!
+ * DokuWiki Bootstrap3 Template: Template
+ *
+ * Home     http://dokuwiki.org/template:bootstrap3
+ * Author   Giuseppe Di Terlizzi <giuseppe.diterlizzi@gmail.com>
+ * License  GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ */
+
+html {
+  -ms-overflow-style: scrollbar;
+}
+
+body {
+
+  &.default.dw-page-on-panel,
+  &.optional.dw-page-on-panel, {
+    background: #FEFEFE;
+  }
+
+}
+
+/**
+ * Links and Interwiki icons
+ */
+a.urlextern {
+  background-image: url('iconify.php?icon=mdi-earth-arrow-right.svg&color=%23666666') !important;
+}
+
+a.mail {
+  background-image: url('iconify.php?icon=mdi-email.svg&color=%23666666') !important;
+}
+
+a.iw_user {
+  background-image: url('iconify.php?icon=mdi-account.svg');
+}
+
+a.iw_wp, a.iw_wpde, a.iw_wpes, a.iw_wpfr, a.iw_wpjp, a.iw_wpmeta, a.iw_wppl {
+  background-image: url('iconify.php?icon=mdi-wikipedia.svg');
+}
+
+a.iw_go {
+  background-image: url('iconify.php?icon=mdi-google.svg&color=%234285f4');
+}
+
+a.iw_skype {
+  background-image: url('iconify.php?icon=mdi-skype.svg&color=%2300aff0');
+}
+
+a.iw_phpfn {
+  background-image: url('iconify.php?icon=mdi-elephant.svg&color=%23858eb8');
+}
+
+a.iw_callto, a.iw_tel {
+  background-image: url('iconify.php?icon=mdi-phone.svg');
+}
+
+a.iw_amazon, a.iw_amazon_de, a.iw_amazon_uk {
+  background-image: url('iconify.php?icon=mdi-amazon.svg');
+}
+
+a.iw_man {
+  background-image: url('iconify.php?icon=mdi-book.svg');
+}
+
+a.iw_paypal {
+  background-image: url('iconify.php?icon=mdi-paypal.svg&color=%2324397c');
+}
+
+
+aside,
+.dw__dropdown_page {
+
+  word-wrap: break-word;
+
+  h1, h2, h3, h4 h5 {
+    margin: 10px 0 5px 0;
+  }
+
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.6em; }
+  h3 { font-size: 1.4em; }
+  h4 { font-size: 1.2em; }
+  h5 { font-size: 1em;   }
+
+  .page-header {
+    margin: 10px 0;
+  }
+
+  .panel-heading {
+    cursor: pointer;
+  }
+
+  .nav {
+
+    ul {
+      padding-left: 10px;
+    }
+
+    li {
+
+      a {
+        padding: 5px 10px !important;
+      }
+
+      a.urlextern,
+      a.mail,
+      a.mediafile {
+        padding-left: 28px !important;
+        background-position: 8px center;
+      }
+
+    }
+
+  }
+
+}
+
+pre.code {
+  white-space: pre-wrap;
+}
+
+input,
+textarea,
+select {
+  font-weight: 400;
+}
+
+body,
+main {
+  position: relative;
+}
+
+/* Ordered list style */
+ol             { list-style: decimal outside; }   /* Decimal: 1. 2. 3. ...              */
+ol ol          { list-style-type: lower-alpha; }  /* Alpha (lowercase): a. b. c. ...    */
+ol ol ol       { list-style-type: upper-roman; }  /* Roman (uppercase): I. II. III. ... */
+ol ol ol ol    { list-style-type: upper-alpha; }  /* Alpha (uppercase): A. B. C. ...    */
+ol ol ol ol ol { list-style-type: lower-roman; }  /* Roman (lowercase): i. ii. iii. ... */
+
+/* Header */
+header {
+
+  nav {
+
+    .navbar-brand {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    #dw__tagline {
+      font-size: 0.6em;
+      line-height: 0.6em;
+      white-space: nowrap;
+    }
+
+    #dw__search {
+
+      /* Typeahead plugin */
+      .typeahead {
+        max-height: 250px;
+        overflow-y: auto;
+
+        li.dropdown-header {
+          font-size: 80%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          padding-top: 0;
+        }
+
+        a.dropdown-item {
+          font-size: 85%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+
+    }
+
+    &.navbar-fixed-top .dw__actions {
+      margin: 0 15px 0 5px;
+    }
+
+    .dw__actions .btn {
+      margin-left: 5px;
+    }
+
+  }
+
+}
+
+article .page-header:first-child {
+  margin-top: 10px;
+}
+
+/* Characters picker */
+div#picker2 {
+  z-index:1000;
+} 
+
+
+/* Message area (alerts, warnings, errors, etc.) */
+#dw__msgarea {
+
+  .alert {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .bs-callout {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+}
+
+
+/* NavBar Logo */
+#dw__logo.dw-logo-tagline {
+  margin-top: -5px;
+}
+
+
+/* Badges */
+#dw__badges li {
+  padding-right: 0;
+}
+
+
+
+/* Configuration Manager */
+#config__manager {
+
+  label {
+    color: initial;
+    white-space: initial;
+    font-size: 1.2em;
+    font-weight: initial;
+  }
+
+  td {
+    padding: 5px;
+  }
+
+  legend {
+    font-size: 1.8em;
+  }
+
+  fieldset {
+    background: initial !important;
+    padding: 0 !important;
+    text-align: left;
+  }
+
+  .label {
+    display: block;
+    font-weight: normal;
+    color: initial;
+  }
+
+  .outkey {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 1.2em !important;
+    background: transparent !important;
+  }
+
+  #tpl____bootstrap3____template_settings_name legend {
+    padding-top: 25px;
+  }
+
+  span[title*="$meta"] {
+    font-family: monospace;
+  }
+
+}
+
+
+/* Breadcrumbs */
+#dw__breadcrumbs {
+
+  hr {
+    margin: 5px 0;
+    padding: 0;
+  }
+
+  .breadcrumb {
+    background: transparent;
+    border: 0 none;
+    padding-left: 0;
+    display: inline;
+  }
+
+}
+
+
+/* Footnotes */
+#insitu__fn {
+  max-width: 20em;
+}
+
+.footnotes {
+  div.fn > div.content {
+    display:inline;
+  }
+}
+
+
+/* User Menu */
+#dw__user_menu {
+
+  .nav > li > a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden !important;
+  }
+
+}
+
+
+/* Page tools */
+#dw__pagetools {
+
+  position: absolute;
+  right: 30px;
+  padding-top: 50px;
+  z-index: 999;
+  text-align: center;
+
+  ul li a {
+    padding: 2px 4px;
+  }
+
+  ul li:not(.active) a:hover {
+    background: transparent;
+  }
+
+  .tools {
+    position: fixed;
+  }
+
+}
+
+
+/* Footer Page */
+#dw__footer {
+
+  z-index: 995;
+
+  &.container-fluid {
+    margin: 0;
+    margin-bottom: -50px;
+    padding: 0;
+  }
+
+}
+
+/* Extension Manager */
+#extension__manager {
+
+  ul.tabs li.active a,
+  .panelHeader {
+    background-color: initial;
+  }
+
+  ul.tabs li.active a {
+    /* FIXME */
+    border-bottom-color: white;
+  }
+
+}
+
+
+/* User Manager */
+#user__manager .import_users {
+  clear: both;
+}
+
+
+/* Media Manager */
+#media__tree {
+
+  height: 300px;
+  overflow: auto;
+
+  li.media {
+    margin-top: 0;
+  }
+
+}
+
+
+#mediamgr__content {
+  position: fixed;
+}
+
+
+#media__content {
+
+  height: auto;
+
+  input, label {
+    margin: 0;
+  }
+
+  label {
+    display: inline !important;
+  }
+
+  [type=submit] {
+    vertical-align: bottom;
+  }
+
+}
+
+
+#mediamgr__aside {
+  height: auto;
+  top: 0;
+  position: fixed;
+}
+
+
+#media__opts label {
+  display: inline !important;
+}
+
+
+#mediamanager__page .ui-buttonset label {
+  margin-right: 0 !important;
+}
+
+
+#dokuwiki__pageheader p a.label {
+  white-space: initial;
+}
+
+/* Page ID */
+[data-img-id] .pageId {
+
+  &::after {
+    content: " }}";
+  }
+
+  &::before {
+    content: "{{ ";
+  }
+
+}
+
+[data-page-id] .pageId {
+
+  &::after {
+    content: " ]]";
+  }
+
+  &::before {
+    content: "[[ ";
+  }
+
+}
+
+
+.mode_search li {
+  list-style-type: none;
+}
+
+.mode_index {
+
+  ul.idx {
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    i {
+      padding-right: 5px;
+    }
+
+    strong {
+      font-weight: normal;
+    }
+
+    li {
+      list-style-type: none;
+      list-style-image: none !important;
+    }
+
+  }
+
+}
+
+
+.mode_admin {
+
+  input[name="installfile"] {
+    height: auto;
+  }
+
+  h1#dokuwiki_settings,
+  h1#plugin_settings,
+  h1#template_settings {
+    font-size: 1.80em;
+  }
+
+  #config__manager legend {
+    cursor: pointer;
+  }
+
+}
+
+.dokuwiki div.ui-admin {
+
+  ul li {
+    font-weight: normal;
+  }
+
+  #admin__version {
+    clear: both;
+    float: none;
+  }
+
+  .admin_tasks {
+    width: 50% !important;
+    padding: 0 10px !important;
+  }
+
+  ul.admin_plugins {
+    padding: 5px;
+    margin-bottom: 0px;
+  }
+
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  opacity: .8;
+  display: none;
+  z-index: 1024;
+}
+
+
+/* Fix for media list overlap */
+.fix-media-list-overlap {
+  overflow: hidden;
+}
+
+
+/* External URL (navbar) */
+.navbar-nav a.urlextern,
+.navbar-nav a.mail {
+  padding: 15px 0 15px 18px;
+}
+
+
+/* Page Info */
+.docInfo .list-inline li {
+  padding-left : 0;
+}
+
+
+/* User profile image */
+.profile-image {
+  position: relative;
+  top: -5px;
+  float: left;
+  left: -5px;
+}
+
+
+/* Page icons (email, print, social share, etc.) */
+.dw-page-icons {
+
+  a {
+    color: inherit;
+  }
+
+  span {
+    display: none;
+  }
+
+  svg {
+    width: 1.2em !important;
+    height: 1.2em !important;
+  }
+
+  .share-google-plus svg { color: #DC4E41; }
+  .share-twitter     svg { color: #55ACEE; }
+  .share-linkedin    svg { color: #0077B5; }
+  .share-facebook    svg { color: #3B5998; }
+  .share-whatsapp    svg { color: #43D854; }
+  .share-pinterest   svg { color: #BD081C; }
+  .share-telegram    svg { color: #0088CC; }
+  .share-yammer      svg { color: #5AA8BF; }
+  .share-reddit      svg { color: #FF4500; }
+
+}
+
+/* Override Bootstrap3 style */
+
+/* Set ".img-responsive" to "inline" */
+.img-responsive {
+  display: inline;
+}
+
+ul.btn-group {
+  padding: 0;
+}
+
+.table thead tr th[rowspan] {
+  vertical-align: top !important;
+}
+
+
+/* Commond DokuWiki styles */
+.dokuwiki {
+
+  fieldset {
+    border: none;
+  }
+
+  img.media {
+    margin: .2em 0;
+  }
+
+  img.medialeft {
+    float: left;
+    margin: .2em 1em .2em 0;
+  }
+
+  img.mediaright {
+    float: right;
+    margin: .2em 0 .2em 1em;
+  }
+
+  img.mediacenter {
+    display: block;
+    margin: .2em auto;
+  }
+
+  textarea.edit {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace
+  }
+
+  ul.idx {
+    padding-left: 18px;
+  }
+
+  article .wikilink2 {
+    color: #d9534f;
+  }
+
+  article .page {
+    min-height: 400px;
+  }
+
+  .diffnav select {
+    height: auto;
+  }
+
+  .curid {
+    font-weight: bold;
+  }
+
+  .diff.diff_sidebyside {
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    td.diff-context {
+      width: 50%;
+    }
+
+  }
+
+  table.diff {
+    select {
+      font-size: 1em !important;
+    }
+    td {
+      font-size: 1em !important; 
+    }
+  }
+
+}
+
+/* Custom DropDown menu with multiple columns */
+.dropdown-row {
+
+  > ul {
+    position: static;
+    border: 0px;
+    box-shadow: none;
+  }
+
+  > li a {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden !important;
+  }
+
+}
+
+
+/* Custom DropDown Menu Large (see http://bootsnipp.com/snippets/featured/large-dropdown-menu) */
+
+#dw__admin .dropdown-menu-large {
+  width: 600px;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu-large {
+    margin-left: 0 ;
+    margin-right: 0 ;
+  }
+}
+
+
+/* Dropdown menu page */
+.dw__dropdown_page {
+
+  .dropdown-menu-large {
+    background: #FFF;
+  }
+
+  .nav li a {
+    padding: 5px 10px;
+  }
+
+}
+
+
+/* AnchorJS */
+a.anchorjs-link:hover {
+  text-decoration: none;
+}
+
+
+/* Override Bootswatch Style */
+body.cosmo #tool__bar .btn {
+  border: 1px solid #CCC;
+  background-color: #EEE;
+}
+
+body {
+
+  &.cyborg,
+  &.darkly,
+  &.slate,
+  &.superhero,
+  &.solar {
+    #config__manager .outkey {
+      color: #fff !important;
+    }
+    #extension__list {
+      ul.extensionList li {
+        color: inherit;
+      }
+      .legend {
+        color: inherit;
+      }
+      p {
+        color: inherit;
+      }
+    }
+  }
+
+}
+
+.dw-table-width {
+
+  article table.inline {
+    width: auto;
+  }
+
+  .mode_admin table.inline {
+    width: 100%;
+  }
+
+}
+
+
+body.yeti #dw__user_menu dl {
+  color: white;
+}
+
+/* SVG icon for DokuWiki */
+
+svg.icon {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.menuitem svg {
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+#dw__pagetools .menuitem svg {
+  fill: initial !important;
+}
+
+.dropdown-menu .menuitem svg {
+  padding-right: 4px;
+}
+
+#dw__pagetools .active .menuitem svg {
+  fill: #fff !important;
+}
+
+#dw__pagetools .menuitem span {
+  display: none;
+}
+
+/* Fixes for Bootswatch theme and DokuWiki actions */
+
+body {
+
+  &.cyborg,
+  &.darkly,
+  &.slate,
+  &.superhero,
+  &.solar {
+    #dw__pagetools .menuitem svg {
+      fill: #fff !important;
+    }
+    .iw_user {
+      background-image: url('iconify.php?icon=mdi-account.svg&color=%23ffffff');
+    }
+    a.urlextern {
+      background-image: url('iconify.php?icon=mdi-earth-arrow-right.svg&color=%23ffffff') !important;
+    }
+
+    a.mail {
+      background-image: url('iconify.php?icon=mdi-email.svg&color=%23ffffff') !important;
+    }
+    a.iw_callto, a.iw_tel {
+      background-image: url('iconify.php?icon=mdi-phone.svg&color=%23ffffff');
+    }
+
+    a.iw_amazon, a.iw_amazon_de, a.iw_amazon_uk {
+      background-image: url('iconify.php?icon=mdi-amazon.svg&color=%23ffffff');
+    }
+
+    a.iw_man {
+      background-image: url('iconify.php?icon=mdi-book.svg&color=%23ffffff');
+    }
+    a.iw_wp, a.iw_wpde, a.iw_wpes, a.iw_wpfr, a.iw_wpjp, a.iw_wpmeta, a.iw_wppl {
+      background-image: url('iconify.php?icon=mdi-wikipedia.svg&color=%23ffffff');
+    }
+  }
+
+  &.yeti .dropdown-menu .menuitem svg {
+    fill: #fff;
+  }
+
+  &.solar .dropdown-menu .menuitem svg {
+    fill: #839496;
+  }
+
+  &.sandstone .menuitem svg {
+    fill: #98978b;
+  }
+
+  &.lumen .menuitem svg {
+    fill: #555555;
+  }
+
+  &.flatly .menuitem svg {
+    fill: #7b8a8b;
+  }
+
+}
+
+.alert {
+  overflow: hidden;
+}

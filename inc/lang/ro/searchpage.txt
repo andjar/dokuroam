@@ -1,0 +1,4 @@
+====== Căutare ======
+
+Rezultatele căutării sunt afișate mai jos. @CREATEPAGEINFO@
+

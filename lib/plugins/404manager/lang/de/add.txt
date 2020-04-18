@@ -1,0 +1,4 @@
+Benutze das folgende Format für die Zielseite :
+^ Ziel Seiten Typ ^ Beispiel ^
+| Interne Wiki Seite | - namespace:internalpagename \\  - namespace_first:namespace_second:internalpagename |
+| Externe Website | - <nowiki>http://www.example.com/mypage</nowiki> \\ - <nowiki>http://www.example.com</nowiki> |

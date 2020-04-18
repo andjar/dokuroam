@@ -1,0 +1,3 @@
+====== Åtkomst till SQLite ======
+
+Denna bild ger dig ett gränssnitt för att komma åt existerande SQLite-databaser. Välj databaser från innehållsförteckningen och skriv in dina SQL-kommandon.

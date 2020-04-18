@@ -1,0 +1,16 @@
+# Notes from @PAGE@
+
+## Today's tasks
+### Completed today
+~~TODOLIST completedat:@tododate@ showdate:yes ns:notes header:none~~
+
+### Created today
+~~TODOLIST startat:@tododate@ showdate:yes ns:notes header:none~~
+
+### Due today
+~~TODOLIST dueat:@tododate@ showdate:yes ns:notes header:none~~
+
+## Today's notes
+{{tagtopic>@PAGE@ -todo&noreadmore&noeditbutton&permalink}}
+
+~~NOCACHE~~

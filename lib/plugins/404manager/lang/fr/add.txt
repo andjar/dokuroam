@@ -1,0 +1,4 @@
+Utilisez le format suivant pour la page cible :
+^ Type page Cibe ^ Exemple ^
+| Page interne | - namespace:page_interne \\  - namespace_1:namespace_2:page_interne |
+| Site web | - <nowiki>http://www.example.com/mypage</nowiki> \\ - <nowiki>http://www.example.com</nowiki> |

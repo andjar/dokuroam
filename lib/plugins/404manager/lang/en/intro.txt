@@ -1,0 +1,5 @@
+====== 404Manager Plugin Redirect Management ======
+
+Here you can set up redirects. You can redirect to internal pages as external
+websites. 
+

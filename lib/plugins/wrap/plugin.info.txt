@@ -1,0 +1,8 @@
+base     wrap
+author   Anika Henke
+email    anika@selfthinker.org
+date     2018-04-22
+name     Wrap Plugin
+desc     Universal plugin which combines functionalities of many other plugins. Wrap wiki text inside containers (divs or spans) and give them a class (choose from a variety of preset classes), a width and/or a language with its associated text direction.
+url      https://www.dokuwiki.org/plugin:wrap
+#syntax  See example.txt

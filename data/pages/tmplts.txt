@@ -1,0 +1,3 @@
+@@Note@@
+
+{{tag>note %Y%m%d}}

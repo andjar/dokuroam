@@ -1,0 +1,352 @@
+/********************************************************************
+Screen and Print Styles for the Wrap Plugin
+********************************************************************/
+
+.dokuwiki {
+
+/* resetting the box model to something more sane makes life a whole lot easier */
+.plugin_wrap {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* emulate a headline
+   (only with 'emulatedHeadlines' config option set)
+   @deprecated 2018-03-20 */
+.plugin_wrap.wrap__emuhead em strong {
+    font-size: 130%;
+    font-weight: bold;
+    font-style: normal;
+    display: block;
+}
+/* emulate a bigger headline with a bottom border */
+.plugin_wrap.wrap__emuhead em strong em.u {
+    font-size: 115%;
+    border-bottom: 1px solid @ini_border;
+    font-style: normal;
+    text-decoration: none;
+    display: block;
+}
+/* different bigger headline for safety notes */
+.wrap_danger.wrap__emuhead em strong em.u,
+.wrap_warning.wrap__emuhead em strong em.u,
+.wrap_caution.wrap__emuhead em strong em.u,
+.wrap_notice.wrap__emuhead em strong em.u,
+.wrap_safety.wrap__emuhead em strong em.u {
+    text-transform: uppercase;
+    border-bottom-width: 0;
+}
+/* change border colour of emulated headlines inside boxes to something more neutral
+   (to match all the different background colours) */
+.wrap_box.wrap__emuhead em strong em.u,
+.wrap_info.wrap__emuhead em strong em.u,
+.wrap_important.wrap__emuhead em strong em.u,
+.wrap_alert.wrap__emuhead em strong em.u,
+.wrap_tip.wrap__emuhead em strong em.u,
+.wrap_help.wrap__emuhead em strong em.u,
+.wrap_todo.wrap__emuhead em strong em.u,
+.wrap_download.wrap__emuhead em strong em.u {
+    border-bottom-color: #999;
+}
+
+/* real headlines should not be indented inside a wrap */
+.plugin_wrap h1,
+.plugin_wrap h2,
+.plugin_wrap h3,
+.plugin_wrap h4,
+.plugin_wrap h5 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* columns
+********************************************************************/
+
+.wrap_left,
+.wrap_column {
+    float: left;
+    margin-right: 1.5em;
+}
+[dir=rtl] .wrap_column {
+    float: right;
+    margin-left: 1.5em;
+    margin-right: 0;
+}
+.wrap_right {
+    float: right;
+    margin-left: 1.5em;
+}
+.wrap_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*____________ CSS3 columns  ____________*/
+
+.wrap_col2, .wrap_col3, .wrap_col4, .wrap_col5,
+.wrap_colsmall, .wrap_colmedium, .wrap_collarge {
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    -moz-column-rule: 1px dotted #666;
+    -webkit-column-rule: 1px dotted #666;
+    column-rule: 1px dotted #666;
+}
+.wrap_col2 {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+.wrap_col3 {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+}
+.wrap_col4 {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+}
+.wrap_col5 {
+    -moz-column-count: 5;
+    -webkit-column-count: 5;
+    column-count: 5;
+}
+
+.wrap_colsmall {
+    -moz-column-width: 10em;
+    -webkit-column-width: 10em;
+    column-width: 10em;
+}
+.wrap_colmedium {
+    -moz-column-width: 20em;
+    -webkit-column-width: 20em;
+    column-width: 20em;
+}
+.wrap_collarge {
+    -moz-column-width: 30em;
+    -webkit-column-width: 30em;
+    column-width: 30em;
+}
+
+
+/* widths
+********************************************************************/
+
+.wrap_twothirds {
+    width: 65%;
+    margin-right: 5%;
+}
+
+.wrap_half {
+    width: 48%;
+    margin-right: 4%;
+}
+
+.wrap_third {
+    width: 30%;
+    margin-right: 5%;
+}
+
+.wrap_quarter {
+    width: 22%;
+    margin-right: 4%;
+}
+
+[dir=rtl] .wrap_half,
+[dir=rtl] .wrap_quarter {
+    margin-right: 0;
+    margin-left: 4%;
+}
+[dir=rtl] .wrap_twothirds,
+[dir=rtl] .wrap_third {
+    margin-right: 0;
+    margin-left: 5%;
+}
+
+/* this doesn't always work when third and twothirds are mixed across rows
+   but can be fixed by adding any div (e.g. <WRAP clear/>) after a row */
+.wrap_half + .wrap_half,
+.wrap_third + .wrap_twothirds,
+.wrap_twothirds + .wrap_third,
+.wrap_third + .wrap_third + .wrap_third,
+.wrap_quarter + .wrap_quarter + .wrap_quarter + .wrap_quarter {
+    margin-right: 0;
+
+    [dir=rtl] & {
+        margin-left: 0;
+    }
+
+    + * {
+        clear: left;
+        [dir=rtl] & {
+            clear: right;
+        }
+    }
+}
+
+/* show 2 instead 4 columns on medium sized screens (mobile, etc) */
+@media only screen and (max-width: 950px) {
+
+.wrap_quarter {
+    width: 48%;
+}
+.wrap_quarter:nth-of-type(2n) {
+    margin-right: 0;
+}
+[dir=rtl] .wrap_quarter:nth-of-type(2n) {
+    margin-left: 0;
+}
+.wrap_quarter:nth-of-type(2n+1) {
+    clear: left;
+}
+[dir=rtl] .wrap_quarter:nth-of-type(2n) {
+    clear: right;
+}
+
+} /* /@media */
+
+/* show full width on smaller screens (mobile, etc) */
+@media only screen and (max-width: 600px) {
+
+.wrap_twothirds,
+.wrap_half,
+.wrap_third,
+.wrap_quarter {
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+    float: none;
+}
+
+} /* /@media */
+
+
+/* alignments
+********************************************************************/
+
+.wrap_leftalign {
+    text-align: left;
+}
+.wrap_centeralign {
+    text-align: center;
+}
+.wrap_rightalign {
+    text-align: right;
+}
+.wrap_justify {
+    text-align: justify;
+}
+
+
+/* box
+********************************************************************/
+
+/* see styles for boxes and notes with icons in style.css */
+
+/*____________ rounded corners ____________*/
+/* (only for modern browsers) */
+
+div.wrap_round {
+    border-radius: 1.4em;
+}
+span.wrap_round {
+    border-radius: .14em;
+}
+
+
+/* mark
+********************************************************************/
+
+.wrap_lo {
+    color: @ini_text_neu;
+    font-size: 85%;
+}
+.wrap_em {
+    color: #c00;
+    font-weight: bold;
+}
+.wrap__dark.wrap_em {
+    color: #f66;
+}
+
+/* see styles for highlighted text in style.css */
+
+
+/* miscellaneous
+********************************************************************/
+
+/*____________ tablewidth ____________*/
+
+.wrap_tablewidth table {
+    width: 100%;
+}
+
+/*____________ indent ____________*/
+
+.wrap_indent {
+    padding-left: 1.5em;
+}
+[dir=rtl] .wrap_indent {
+    padding-right: 1.5em;
+    padding-left: 0;
+}
+
+
+/*____________ outdent ____________*/
+
+.wrap_outdent {
+    margin-left: -1.5em;
+}
+[dir=rtl] .wrap_outdent {
+    margin-right: -1.5em;
+    margin-left: 0;
+}
+
+/*____________ word wrapping in pre ____________*/
+
+div.wrap_prewrap pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;/* for IE < 8 */
+}
+
+/*____________ spoiler ____________*/
+
+div.wrap_spoiler {
+    margin-bottom: 1.5em;
+}
+/* see rest of spoiler styles in style.css */
+
+/*____________ clear float ____________*/
+
+.wrap_clear {
+    clear: both;
+    line-height: 0;
+    height: 0;
+    font-size: 1px;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+/*____________ hide ____________*/
+
+.wrap_hide {
+    display: none;
+}
+
+
+/*____________ button-style link ____________*/
+
+.wrap_button a:link,
+.wrap_button a:visited {
+    background-image: none;
+    border: 1px solid @ini_border;
+    border-radius: .3em;
+    padding: .5em .7em;
+    text-decoration: none;
+}
+/* see rest of button link styles in style.css */
+
+} /* /.dokuwiki */

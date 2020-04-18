@@ -1,0 +1,45 @@
+/********************************************************************
+Print Styles for the Wrap Plugin (additional to all.css)
+********************************************************************/
+
+@import 'print_or_pdf.less';
+
+.dokuwiki {
+
+/* boxes and notes with icons
+********************************************************************/
+
+div.wrap_box,
+div.wrap_danger, div.wrap_warning, div.wrap_caution, div.wrap_notice, div.wrap_safety,
+div.wrap_info, div.wrap_important, div.wrap_alert, div.wrap_tip, div.wrap_help, div.wrap_todo, div.wrap_download {
+    border: 2px solid #999;
+    padding: 1em 1em .5em;
+    margin-bottom: 1.5em;
+}
+span.wrap_box,
+span.wrap_danger, span.wrap_warning, span.wrap_caution, span.wrap_notice, span.wrap_safety,
+span.wrap_info, span.wrap_important, span.wrap_alert, span.wrap_tip, span.wrap_help, span.wrap_todo, span.wrap_download {
+    border: 1px solid #999;
+    padding: 0 .3em;
+}
+
+
+/* mark
+********************************************************************/
+
+.wrap_hi {
+    border: 1px solid #999;
+}
+
+
+/* miscellaneous
+********************************************************************/
+
+/*____________ spoiler ____________*/
+
+.wrap_spoiler {
+    visibility: hidden;
+}
+
+
+} /* /.dokuwiki */

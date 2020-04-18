@@ -1,0 +1,3 @@
+====== SQLite-Zugriff======
+
+Mit dieser Oberfläche kann mit existierenden SQLite-Datenbanken direkt interagiert werden. Wählen Sie einfach die Datenbank von der Tabelle aus und geben Sie die SQL-Kommandos ein.

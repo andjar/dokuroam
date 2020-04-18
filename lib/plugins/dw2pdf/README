@@ -1,0 +1,40 @@
+dw2pdf Plugin for DokuWiki
+
+Export DokuWiki pages to PDF
+
+All documentation for this plugin can be found at
+http://www.dokuwiki.org/plugin:dw2pdf
+
+If you install this plugin manually, make sure it is installed in
+lib/plugins/dw2pdf/ - if the folder is called different it
+will not work!
+
+Please refer to http://www.dokuwiki.org/plugins for additional info
+on how to install plugins in DokuWiki.
+
+----
+
+Notes on updating the mpdf library. The library is installed by composer
+but results are checked into the plugin repository. Similar to what we do
+in DokuWiki core. Because mpdf has some dependencies that are already
+satisfied in DokuWiki core, they do not need to be installed by the plugin
+again. To do so we declare them as replaced in the composer.json. The
+.gitignore is used to skip checking in unneeded library files like examples
+etc.
+
+Updating should be done via composer update --no-dev --prefer-dist
+
+----
+Copyright (C) Andreas Gohr <gohr@cosmocode.de>,
+              Luigi Micco <l.micco@tiscali.it>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the License
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+See the COPYING file in your DokuWiki folder for details

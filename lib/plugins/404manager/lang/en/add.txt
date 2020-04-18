@@ -1,0 +1,5 @@
+\\
+Example of value for the page :
+^ Page Type ^ Example ^
+| Internal Wiki Page | - namespace:internalpagename \\  - namespace_first:namespace_second:internalpagename |
+| External Website (Target page only) | - https://gerardnico.com/404managerplugin \\ - http://www.example.com |

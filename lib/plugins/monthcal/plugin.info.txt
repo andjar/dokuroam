@@ -1,0 +1,8 @@
+base    monthcal
+author  Milosz Galazka
+email   milosz@sleeplessbeastie.eu
+date    2019-04-14
+name    monthcal plugin
+desc    Monthly calendar
+url     https://www.dokuwiki.org/plugin:monthcal
+version 1.3

@@ -27,6 +27,8 @@ All your pages has a complete revision history
 ### Export options
 All your notes are saved as plain text files on your server. There are plugins for export to pdf or odt.
 
+If you have pandoc installed on your server, instructions is provided below on how to export a text (with citations!) to docx (or any other pandoc-supported format)
+
 ### Media support
 You can add images and ???.
 
@@ -71,6 +73,33 @@ The starred (\*) plugins have been modified.
 ### Include backlinks
 The include plugin does not support including backlinkgs out of the box. 
 
+### Pandoc export
+Make a file called "pandoc.php":
+```php
+<?php
+
+    $data = $_POST['fpath'];
+    $run_str = 'pandoc --filter pandoc-citeproc -f markdown ' . $_POST['fpath'] . ' -o ' . $_SERVER['DOCUMENT_ROOT'] . '/data/tmp/' . $_POST['pageid'] .'.docx';
+    exec($run_str);
+    header("Location: ". '/data/tmp/' . $_POST['pageid'] .'.docx');
+
+?>
+```
+and put it eg. in the root folder. In your sidebar you can add
+
+```php
+<php>
+echo '<html>';
+echo '<form action="/pandoc.php" method="post" >';
+echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
+echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
+echo '<button type="submit">Export</button>';
+echo '</form>';
+echo '</html>';
+</php>
+``` 
+
+Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page.
 
 ### userall.css
 ```css

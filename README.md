@@ -33,12 +33,15 @@ If you have pandoc installed on your server, instructions is provided below on h
 You can add images and ???.
 
 ## Installation
+
+First: I am not a professional programmer and my main goal is just making this functional. As I run this setup locally, offline and with just a single user, security is not my main priority. I therefore strongly advise you not to expose this setup to the internet without reviewing the changes that I have made and evaluated the risks yourself, and I will not take any responsibility for trouble that may arise. However, I hope you'll find it useful :)
+
 Clone this project and upload it to your server. Open install.php, and install DokuWiki as normal.
 
 When you log in as administrator, you should change the following settings:
 
 * phpoksecurity -> Allow embedded PHP? **YES**
-  * **Note that this may be a threat to safety**, use with care
+  * **Note that this may be a threat to security**, use with care
 * plugin»todo»AllowLinks -> Allow actions to also link to pages with the same name? **Yes**
 * plugin»todo»ActionNamespace -> What namespace should your actions be created in (".:" = Current NS, Blank = Root NS)  -> **Notes**
 * template -> Template aka. the design of the wiki -> "**bootstrap3**"
@@ -53,7 +56,7 @@ This project builds upon several plugins:
 * bureacracy\*
 * dw2pdf
 * imgpaste
-* include\*
+* [include](https://www.dokuwiki.org/plugin:include)\*
 * linksuggest
 * markdowku
 * monthcal\*
@@ -71,7 +74,40 @@ The starred (\*) plugins have been modified.
 ## Modifications
 
 ### Include backlinks
-The include plugin does not support including backlinkgs out of the box. 
+The include plugin does not support including backlinks out of the box. Two modifications were made:
+
+In incude.php I have added this on line 15
+
+```php
+$this->Lexer->addSpecialPattern("{{blinks>.+?}}", $mode, 'plugin_include_include');
+```
+
+Secondly, in helper.php (line 715) I have added
+
+```php
+case 'blinks':
+            $page = $this->_apply_macro($page, $parent_id);
+            resolve_pageid(getNS($parent_id), $page, $exists);
+            @require_once(DOKU_INC.'inc/fulltext.php');
+            $pagearrays = ft_backlinks($page,true);
+            $this->taghelper =& plugin_load('helper', 'tag');
+            $tags = $this->taghelper->getTopic('notes', null, 'note');
+            foreach ($tags as $tag){
+                $tagss[] = $tag['id'];
+            }
+            if(!empty($pagearrays)){
+                foreach ($pagearrays as $pagearray) {
+                    if(in_array($pagearray,$tagss)){
+                        $pages[] = $pagearray;
+                    }
+                }
+            }else{
+                $pages[] = 'notes:dummy';
+            }
+            break;
+```
+
+In sum, these allows you to to use "blinks" in the same way as "tagtopic" or "namespace". Only pages in namespace "notes" tagged with "note" are included. The tag is to avoid recursion. You should therefore not use the blink in pages tagged with "notes". If there are no backlinks yet, notes:dummy is included.
 
 ### Pandoc export
 Make a file called "pandoc.php":

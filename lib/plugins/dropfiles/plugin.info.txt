@@ -1,7 +1,0 @@
-base   dropfiles
-author Michael Große
-email  dokuwiki@cosmocode.de
-date   2019-10-30
-name   dropfiles plugin
-desc   Allows to upload files by drang'n'drop into the editarea of a page
-url    https://dokuwiki.org/plugin:dropfiles

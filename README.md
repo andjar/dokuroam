@@ -110,7 +110,7 @@ case 'blinks':
 In sum, these allows you to to use "blinks" in the same way as "tagtopic" or "namespace". Only pages in namespace "notes" tagged with "note" are included. The tag is to avoid recursion. You should therefore not use the blinks in pages tagged with "notes". If there are no backlinks yet, notes:dummy is included.
 
 ### Pandoc export
-Make a file called "pandoc.php":
+There is a file called "pandoc.php"
 ```php
 <?php
 
@@ -120,12 +120,12 @@ Make a file called "pandoc.php":
 
 ?>
 ```
-and put it eg. in the root folder. In your sidebar you can add
+in the roam folder. In your sidebar you can add
 
 ```php
 <php>
 echo '<html>';
-echo '<form action="/pandoc.php" method="post" >';
+echo '<form action="/roam/pandoc.php" method="post" >';
 echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
 echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
 echo '<button type="submit">Export</button>';
@@ -134,7 +134,7 @@ echo '</html>';
 </php>
 ``` 
 
-Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page.
+Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page. At the moment, there is no control of file access.
 
 ### Allow wikification of hidden fields in the bureaucracy plugin
 

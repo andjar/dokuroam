@@ -53,7 +53,7 @@ This project builds upon several plugins:
 
 * 404manager
 * bootswrapper
-* bureacracy\*
+* [bureaucracy](https://www.dokuwiki.org/plugin:bureaucracy)\*
 * dw2pdf
 * imgpaste
 * [include](https://www.dokuwiki.org/plugin:include)\*
@@ -114,7 +114,6 @@ Make a file called "pandoc.php":
 ```php
 <?php
 
-    $data = $_POST['fpath'];
     $run_str = 'pandoc --filter pandoc-citeproc -f markdown ' . $_POST['fpath'] . ' -o ' . $_SERVER['DOCUMENT_ROOT'] . '/data/tmp/' . $_POST['pageid'] .'.docx';
     exec($run_str);
     header("Location: ". '/data/tmp/' . $_POST['pageid'] .'.docx');
@@ -136,6 +135,18 @@ echo '</html>';
 ``` 
 
 Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page.
+
+### Allow wikification of hidden fields in the bureaucracy plugin
+
+To make the note field in the sidebar properly link back to the page from which the note was made, I added a hidden field. However, we need the bureaucracy plugin to render the content of the hidden field as wikitext. In fieldhidden.php (line 28):
+
+```php
+$tlp = $this->getParam('value');
+       $ins = array_slice(p_get_instructions($tlp), 2, -2);
+       $tlp = p_render('xhtml', $ins, $byref_ignore);
+       $form->addHidden($params['name'], $tlp. '');
+```
+
 
 ### userall.css
 ```css

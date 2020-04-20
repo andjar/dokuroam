@@ -49,8 +49,6 @@ This project builds upon several plugins:
 * 404manager
 * bootswrapper
 * bureacracy\*
-* dropfiles
-  * Github warns about security risks in this plugin
 * dw2pdf
 * imgpaste
 * include\*

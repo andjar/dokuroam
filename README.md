@@ -24,10 +24,54 @@ DokuWiki has its own syntax, but markdown is also supported
 ### Revision history
 All your pages has a complete revision history
 
+#### Archive notes
+You can add a simply "Archive" button to your sidebar by adding
+
+```php
+<php>
+echo '<html>';
+echo '<form action="/roam/archive.php" method="post" >';
+echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
+echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
+echo '<button type="submit">Archive</button>';
+echo '</form>';
+echo '</html>';
+</php>
+```
+
+This will simply exchange the note tag with archived so that the note is not included in backlinks or in the note overview. All links to it will still work, and the file is not removed from the notes folder.
+
 ### Export options
 All your notes are saved as plain text files on your server. There are plugins for export to pdf or odt.
 
-If you have pandoc installed on your server, instructions is provided below on how to export a text (with citations!) to docx (or any other pandoc-supported format)
+If you have pandoc installed on your server, instructions are provided below on how to export a text (with citations!) to docx (or any other pandoc-supported format)
+
+#### Pandoc export
+There is a file called "pandoc.php"
+```php
+<?php
+
+    $run_str = 'pandoc --filter pandoc-citeproc -f markdown ' . $_POST['fpath'] . ' -o ' . $_SERVER['DOCUMENT_ROOT'] . '/data/tmp/' . $_POST['pageid'] .'.docx';
+    exec($run_str);
+    header("Location: ". '/data/tmp/' . $_POST['pageid'] .'.docx');
+
+?>
+```
+in the roam folder. In your sidebar you can add
+
+```php
+<php>
+echo '<html>';
+echo '<form action="/roam/pandoc.php" method="post" >';
+echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
+echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
+echo '<button type="submit">Export</button>';
+echo '</form>';
+echo '</html>';
+</php>
+``` 
+
+Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page. At the moment, there is no control of file access.
 
 ### Media support
 You can add images and ???.
@@ -108,33 +152,6 @@ case 'blinks':
 ```
 
 In sum, these allows you to to use "blinks" in the same way as "tagtopic" or "namespace". Only pages in namespace "notes" tagged with "note" are included. The tag is to avoid recursion. You should therefore not use the blinks in pages tagged with "notes". If there are no backlinks yet, notes:dummy is included.
-
-### Pandoc export
-There is a file called "pandoc.php"
-```php
-<?php
-
-    $run_str = 'pandoc --filter pandoc-citeproc -f markdown ' . $_POST['fpath'] . ' -o ' . $_SERVER['DOCUMENT_ROOT'] . '/data/tmp/' . $_POST['pageid'] .'.docx';
-    exec($run_str);
-    header("Location: ". '/data/tmp/' . $_POST['pageid'] .'.docx');
-
-?>
-```
-in the roam folder. In your sidebar you can add
-
-```php
-<php>
-echo '<html>';
-echo '<form action="/roam/pandoc.php" method="post" >';
-echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
-echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
-echo '<button type="submit">Export</button>';
-echo '</form>';
-echo '</html>';
-</php>
-``` 
-
-Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page. At the moment, there is no control of file access.
 
 ### Allow wikification of hidden fields in the bureaucracy plugin
 

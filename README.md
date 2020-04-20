@@ -1,5 +1,7 @@
-# dokuroam
+# DokuRoam
 DokuWiki based implementation of Roam Research
+
+See a tour on youtube: https://www.youtube.com/watch?v=7JOgkxssXks
 
 Roam Research has rapidly gained popularity by opening up to new workflows. Here, I present some modifications of DokuWiki that implement many of the central features of Roam Research.
 
@@ -25,6 +27,8 @@ All your pages has a complete revision history
 ### Export options
 All your notes are saved as plain text files on your server. There are plugins for export to pdf or odt.
 
+If you have pandoc installed on your server, instructions is provided below on how to export a text (with citations!) to docx (or any other pandoc-supported format)
+
 ### Media support
 You can add images and ???.
 
@@ -34,11 +38,12 @@ Clone this project and upload it to your server. Open install.php, and install D
 When you log in as administrator, you should change the following settings:
 
 * phpoksecurity -> Allow embedded PHP? **YES**
-** **Note that this may be a threat to safety**
+  * **Note that this may be a threat to safety**, use with care
 * plugin»todo»AllowLinks -> Allow actions to also link to pages with the same name? **Yes**
-* plugin»todo»ActionNamespace -> What namespace should your actions be created in (".:" = Current NS, Blank = Root NS) **Notes**
-* template -> Template aka. the design of the wiki -> "bootstrap3"
-* tpl»bootstrap3»sidebarPosition DokuWiki Sidebar position (left or right) -> right
+* plugin»todo»ActionNamespace -> What namespace should your actions be created in (".:" = Current NS, Blank = Root NS)  -> **Notes**
+* template -> Template aka. the design of the wiki -> "**bootstrap3**"
+* tpl»bootstrap3»sidebarPosition DokuWiki Sidebar position (left or right) -> **right**
+* youarehere -> Use hierarchical breadcrumbs (you probably want to disable the above option then) -> **Yes**
 
 ## Plugins
 This project builds upon several plugins:
@@ -46,7 +51,6 @@ This project builds upon several plugins:
 * 404manager
 * bootswrapper
 * bureacracy\*
-* dropfiles
 * dw2pdf
 * imgpaste
 * include\*
@@ -69,5 +73,49 @@ The starred (\*) plugins have been modified.
 ### Include backlinks
 The include plugin does not support including backlinkgs out of the box. 
 
+### Pandoc export
+Make a file called "pandoc.php":
+```php
+<?php
 
+    $data = $_POST['fpath'];
+    $run_str = 'pandoc --filter pandoc-citeproc -f markdown ' . $_POST['fpath'] . ' -o ' . $_SERVER['DOCUMENT_ROOT'] . '/data/tmp/' . $_POST['pageid'] .'.docx';
+    exec($run_str);
+    header("Location: ". '/data/tmp/' . $_POST['pageid'] .'.docx');
+
+?>
+```
+and put it eg. in the root folder. In your sidebar you can add
+
+```php
+<php>
+echo '<html>';
+echo '<form action="/pandoc.php" method="post" >';
+echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
+echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
+echo '<button type="submit">Export</button>';
+echo '</form>';
+echo '</html>';
+</php>
+``` 
+
+Clicking on the "Export" button will run pandoc and redirect you to the file's location. For the citation to work, you should add your references in the beginning of your dokuwiki page.
+
+### userall.css
+```css
+#dokuwiki__aside{
+    position: sticky;
+    top: 75px;
+    bottom: 0;
+    overflow: auto;
+}
+
+.dw-sidebar-content legend {
+    display: none;
+}
+
+.dokuwiki div.wrap_todohide{ /* added */
+    display: none;
+}
+```
 

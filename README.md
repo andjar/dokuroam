@@ -59,7 +59,7 @@ This project builds upon several plugins:
 * [include](https://www.dokuwiki.org/plugin:include)\*
 * linksuggest
 * markdowku
-* monthcal\*
+* [monthcal](https://www.dokuwiki.org/plugin:monthcal)\*
 * newpagetemplate
 * nosidebar
 * pagelist
@@ -73,7 +73,7 @@ The starred (\*) plugins have been modified.
 
 ## Modifications
 
-### Include backlinks
+### Include backlinks in the include plugin
 The include plugin does not support including backlinks out of the box. Two modifications were made:
 
 In incude.php I have added this on line 15
@@ -107,7 +107,7 @@ case 'blinks':
             break;
 ```
 
-In sum, these allows you to to use "blinks" in the same way as "tagtopic" or "namespace". Only pages in namespace "notes" tagged with "note" are included. The tag is to avoid recursion. You should therefore not use the blink in pages tagged with "notes". If there are no backlinks yet, notes:dummy is included.
+In sum, these allows you to to use "blinks" in the same way as "tagtopic" or "namespace". Only pages in namespace "notes" tagged with "note" are included. The tag is to avoid recursion. You should therefore not use the blinks in pages tagged with "notes". If there are no backlinks yet, notes:dummy is included.
 
 ### Pandoc export
 Make a file called "pandoc.php":
@@ -145,6 +145,29 @@ $tlp = $this->getParam('value');
        $ins = array_slice(p_get_instructions($tlp), 2, -2);
        $tlp = p_render('xhtml', $ins, $byref_ignore);
        $form->addHidden($params['name'], $tlp. '');
+```
+
+### Customize the links in the monthcal plugin
+We want the links in the monthcal plugin to apply specific templates for dates and for months. This we can do by exploiting the newpagetemplate plugin.
+
+Line 332 in syntax.php:
+
+```php
+$id = $data['namespace'] . ':' . $date->format('Y') . $date->format('m') . $date->format('d');
+			$linkstring = '&newpagetemplate=journal:tmplt&newpagevars=@tododate@%2C'.$date->format('Y') . '-' . $date->format('m') . '-' . $date->format('d');
+```
+
+and line 345:
+
+```php
+$html_day = '<a href="' . wl($id) . $linkstring . '">' . $date->format('d') . '</a>';
+```
+
+To make a new calendar view, we edit line 280:
+
+```php
+$html .= html_wikilink($data['namespace'] . ':' . $date_prev_month->format('Y') . $date_prev_month->format('m') . ':', '<<');
+$html .= html_wikilink($data['namespace'] . ':' . $date_next_month->format('Y') . $date_next_month->format('m') . ':', '>>');
 ```
 
 

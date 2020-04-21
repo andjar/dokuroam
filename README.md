@@ -3,6 +3,8 @@ DokuWiki based implementation of Roam Research
 
 See a tour on youtube: https://www.youtube.com/watch?v=7JOgkxssXks
 
+On how to use DokuRoam for writing academic papers: https://www.youtube.com/watch?v=G9FM-uGryGU
+
 Roam Research has rapidly gained popularity by opening up to new workflows. Here, I present some modifications of DokuWiki that implement many of the central features of Roam Research.
 
 ## Features

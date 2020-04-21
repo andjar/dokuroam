@@ -1,0 +1,20 @@
+~~NOCACHE~~
+<php>
+echo '<html>';
+echo '<form action="/roam/pandoc.php" method="post" >';
+echo '<input name="pageid" type="hidden" value="'. getID() .'" />';
+echo '<input name="fpath" type="hidden" value="' . wikifn(getID()) . '"> ';
+echo '<button type="submit">Export</button>';
+echo '</form>';
+echo '</html>';
+</php>
+<form>
+action script addref.php
+textarea "reference" !
+hidden "from" "=<php> echo wikifn(getID()); </php>"
+submit "Add reference"
+</form>
+
+<php>
+echo file_get_contents(substr(wikifn(getID()),0,-4) . '/references.txt');
+</php>

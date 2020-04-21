@@ -107,6 +107,7 @@ This project builds upon several plugins:
 * newpagetemplate
 * nosidebar
 * pagelist
+* pagemod
 * sqlite
 * tag
 * todo

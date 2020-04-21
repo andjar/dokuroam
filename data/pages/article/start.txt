@@ -1,0 +1,10 @@
+<form>
+action template articletemplate ":article:%Y%m%d_@@Title@@"
+
+fieldset "New article"
+textarea "Title" !
+addpage reftemplate references
+
+fieldset
+submit
+</form>

@@ -21,6 +21,9 @@ The daily summary contains all notes written today and all tasks created, comple
 ### Markdown
 DokuWiki has its own syntax, but markdown is also supported
 
+### Article namespace
+Here you can start writing articles and add references in the sidebar as bibtex. The Export function will give you nice articles using pandoc, with citations!
+
 ### Revision history
 All your pages has a complete revision history
 

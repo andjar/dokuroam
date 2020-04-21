@@ -1,5 +1,6 @@
 @@Note@@
 
+<WRAP exclude_totally>
 From: [[@@From@@]]
-
+</WRAP>
 {{tag>note %Y%m%d}}

@@ -9,6 +9,18 @@
     display: none;
 }
 
-.dokuwiki div.wrap_todohide{ /* added */
+.dokuwiki div.wrap_todohide{
+    display: none;
+}
+
+.dokuwiki div.plugin_include_content div.wrap_exclude p{
+    display: none;
+}
+
+.dokuwiki div.plugin_include_content div.wrap_exclude:after{
+    content: "...";
+}
+
+.dokuwiki div.plugin_include_content div.wrap_exclude_totally{
     display: none;
 }

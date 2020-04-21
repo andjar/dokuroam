@@ -3,8 +3,6 @@ DokuWiki based implementation of Roam Research
 
 See a tour on youtube: https://www.youtube.com/watch?v=7JOgkxssXks
 
-On how to use DokuRoam for writing academic papers: https://www.youtube.com/watch?v=G9FM-uGryGU
-
 Roam Research has rapidly gained popularity by opening up to new workflows. Here, I present some modifications of DokuWiki that implement many of the central features of Roam Research.
 
 ## Features
@@ -207,8 +205,29 @@ $html .= html_wikilink($data['namespace'] . ':' . $date_next_month->format('Y') 
     display: none;
 }
 
-.dokuwiki div.wrap_todohide{ /* added */
+.dokuwiki div.wrap_todohide{
+    display: none;
+}
+
+.dokuwiki div.plugin_include_content div.wrap_exclude p{
+    display: none;
+}
+
+.dokuwiki div.plugin_include_content div.wrap_exclude:after{
+    content: "...";
+}
+
+.dokuwiki div.plugin_include_content div.wrap_exclude_totally{
     display: none;
 }
 ```
 
+#### WRAP elements
+You can use 
+```
+<WRAP exclude>
+Some text
+</WRAP>
+```
+
+to avoid the text from showing up in transclusions. The text is replaced by a simple "...". To hide it completely, use exclude_totally instead.

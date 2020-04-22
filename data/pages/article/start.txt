@@ -2,9 +2,11 @@
 action template articletemplate ":article:%Y%m%d_@@Title@@"
 
 fieldset "New article"
-textarea "Title" !
+textbox "Title" !
 addpage reftemplate references
 
 fieldset
 submit
 </form>
+
+<nspages -textPages="Articles" -title -exclude -exclude:sidebar -exclude:reftemplate -exclude:articletemplate>

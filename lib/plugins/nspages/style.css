@@ -1,0 +1,147 @@
+/**
+ * style.css for Plugin nspages
+ *
+ * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author     Daniel Schranz <xla@gmx.at>
+ *
+ */
+
+/* the headlines (categories and pages in this category) */
+.catpageheadline {
+    text-decoration: underline;
+    font-size: x-large;
+    clear: left;
+    margin: 0 0 0.7em 0;
+}
+
+/* the letters to indicate the following pages start with a new letter */
+.catpagechars {
+    font-weight: bold;
+}
+
+.catpagecol {
+    position: relative;
+    float: left;
+}
+
+/* to make sure anything after the index will be written beneath */
+.catpageeofidx {
+    clear: left;
+}
+
+div.catpagecol  ul.nspagesul {
+  margin-bottom: 0;
+}
+
+/* below: all the styles for the usePictures mode */
+div.nspagesPicturesModeMain a:hover {
+    background-color:#f4ff4f;
+}
+
+div.nspagesPicturesModeMain a {
+    padding:5px;
+    color: #ff0000;
+    background-color:#eee;
+    font-size: 100%;
+    width:32%;
+    max-width: 350px;
+    height:230px;
+    float:left;
+    margin:5px;
+}
+
+div.nspagesPicturesModeImg {
+    padding:5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 220px;
+    float:left;
+}
+
+.nspagesPicturesModeTitle {
+background-color:#f4ff4f;
+    display:block;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #444;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-decoration: none;max-width: 320px;
+    margin-left: -5px;
+    margin-top: 165px;
+    padding-left: 3px;
+}
+
+.nspagesPicturesDate {
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    color: #eee;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-decoration: none;
+    background: black;
+    padding-right: 10px;
+    padding-left:5px;
+    margin-left: -5px;
+}
+
+/* ---------- RTL --------------*/
+
+[dir=rtl] div.nspagesPicturesModeMain a:hover {
+    background-color:#f4ff4f;
+}
+
+[dir=rtl] div.nspagesPicturesModeMain a {
+    padding:5px;
+    color: #ff0000;
+    background-color:#eee;
+    font-size: 100%;
+    width:32%;
+    max-width: 350px;
+    height:230px;
+    float:left;
+    margin:5px;
+}
+
+[dir=rtl] div.nspagesPicturesModeImg {
+    padding:5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 220px;
+    float:left;
+}
+
+[dir=rtl] .nspagesPicturesModeTitle {
+background-color:#f4ff4f;
+    display:block;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #444;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-decoration: none;max-width: 320px;
+    margin-left: -5px;
+    margin-top: 165px;
+    padding-left: 3px;
+}
+
+[dir=rtl] .nspagesPicturesDate {
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    color: #eee;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-decoration: none;
+    background: black;
+    padding-right: 10px;
+    padding-left:5px;
+    margin-left: -5px;
+}

@@ -21,5 +21,7 @@ submit "Add reference"
 </form>
 
 <php>
-echo file_get_contents(substr(wikifn(getID()),0,-4) . '/references.txt');
+$_GET['bib']=substr(wikifn(getID()),0,-4) . '/references.txt';
+$_GET['all']=1;
+include( 'roam/bibtexbrowser.php' );
 </php>

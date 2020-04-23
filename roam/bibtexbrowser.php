@@ -91,7 +91,7 @@ if (defined('ENCODING')) {
 // the target frame of menu links
 @define('BIBTEXBROWSER_MENU_TARGET','main'); // might be define('BIBTEXBROWSER_MENU_TARGET','_self'); in bibtexbrowser.local.php
 
-@define('ABBRV_TYPE','index');// may be year/x-abbrv/key/none/index/keys-index
+@define('ABBRV_TYPE','key');// may be year/x-abbrv/key/none/index/keys-index
 
 // are robots allowed to crawl and index bibtexbrowser generated pages?
 @define('BIBTEXBROWSER_ROBOTS_NOINDEX',false);

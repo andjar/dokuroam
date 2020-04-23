@@ -10,6 +10,11 @@ echo '</html>';
 </php>
 <form>
 action script addref.php
+
+fieldset
+yesno "Add ref."
+
+fieldset "New reference" "Add ref."
 textarea "reference" !
 hidden "from" "=<php> echo wikifn(getID()); </php>"
 submit "Add reference"

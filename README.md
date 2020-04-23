@@ -26,6 +26,9 @@ DokuWiki has its own syntax, but markdown is also supported
 ### Article namespace
 Here you can start writing articles and add references in the sidebar as bibtex. The Export function will give you nice articles using pandoc, with citations!
 
+#### Nice reference list
+I use bibtexbrowser.php to show the references.
+
 ### Revision history
 All your pages has a complete revision history
 
@@ -233,3 +236,17 @@ Some text
 ```
 
 to avoid the text from showing up in transclusions. The text is replaced by a simple "...". To hide it completely, use exclude_totally instead.
+
+### bibtexbrowser.php
+
+We need to allow for .txt files, so edit line 327 to
+
+```php
+if (BIBTEXBROWSER_LOCAL_BIB_ONLY && (!file_exists($bib) || strcasecmp($ext, 'bib') != 0 || strcasecmp($ext, 'txt') != 0)) {
+```
+
+Also, we want to show the key (line 94);
+
+```php
+@define('ABBRV_TYPE','key');// may be year/x-abbrv/key/none/index/keys-index
+```

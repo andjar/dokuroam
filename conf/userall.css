@@ -13,6 +13,15 @@
     display: none;
 }
 
+.dokuwiki .wrap_yaml{
+    background: #D3D3D3;
+    padding: 5% 5% 5% 5%;
+}
+
+.dokuwiki .wrap_yaml_label{
+    color: grey; 
+}
+
 .dokuwiki div.plugin_include_content div.wrap_exclude p{
     display: none;
 }

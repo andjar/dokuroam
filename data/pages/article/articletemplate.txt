@@ -1,2 +1,23 @@
+<WRAP yaml>
+<WRAP yaml_p>
+<span classes yaml_label>title: </span><span classes yaml_value>"@@Title@@"</span>
+</WRAP>
+<WRAP yaml_p>
+<span classes yaml_label>author: </span><span classes yaml_value>"@NAME@"</span>
+</WRAP>
+<WRAP yaml_p>
+<span classes yaml_label>date: </span><span classes yaml_value>"%d.%m.%Y"</span>
+</WRAP>
+<WRAP yaml_p>
+<span classes yaml_label>from: </span><span classes yaml_value>markdown</span>
+</WRAP>
+<WRAP yaml_p>
+<span classes yaml_label>to: </span><span classes yaml_value>docx</span>
+</WRAP>
+<WRAP yaml_p>
+<span classes yaml_label>standalone: </span><span classes yaml_value>true</span>
+</WRAP>
+</WRAP>
+
 # @@Title@@
 

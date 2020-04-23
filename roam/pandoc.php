@@ -12,30 +12,53 @@
 
        $lines = explode(PHP_EOL, $text);
        $insideWRAP = false;
+       $insideNoPandoc = false;
        $leftWRAP = false;
        $newWRAPs = 0;
        foreach($lines as $key => $line){
-           if( $insideWRAP == false && (strcmp($line, '<WRAP yaml>') == 0)){
-               $insideWRAP = true;
-               $lines[$key] = '---';
+           // text inside nopandoc should be removed
+           if(strpos($line, '<WRAP nopandoc') !== false){
+               $insideNoPandoc = true;
+               unset($lines[$key]);
+           }else if($insideNoPandoc){
+               if(strpos($line, '</WRAP>') !== false){
+                   if($newWRAPs > 0){
+                       $newWRAPs--;
+                       unset($lines[$key]);
+                   }else{
+                        $insideNoPandoc = false;
+                        unset($lines[$key]);
+                   }
+               }else if(strpos($line, '<WRAP') !== false){
+                    $newWRAPs++;
+                    unset($lines[$key]);
+               }else{
+                   unset($lines[$key]);
+               }
+           //reformat the yaml section
            }else{
-               if($insideWRAP){
-                   if(strpos($line, '</WRAP>') !== false){
-                       if($newWRAPs > 0){
+               if( $insideWRAP == false && (strcmp($line, '<WRAP yaml>') == 0)){
+                   $insideWRAP = true;
+                   $lines[$key] = '---';
+               }else{
+                   if($insideWRAP){
+                       if(strpos($line, '</WRAP>') !== false){
+                           if($newWRAPs > 0){
+                               unset($lines[$key]);// = '';
+                               $newWRAPs--;
+                           }else{
+                               $lines[$key] = '---';
+                               $insideWRAP = false;
+                               $leftWRAP = true;
+                           }
+                       } elseif (strpos($line, '<WRAP') !== false){
                            unset($lines[$key]);// = '';
-                           $newWRAPs--;
-                       }else{
-                           $lines[$key] = '---';
-                           $insideWRAP = false;
-                           $leftWRAP = true;
-                       }
-                   } elseif (strpos($line, '<WRAP') !== false){
-                       unset($lines[$key]);// = '';
-                       $newWRAPs++;
-                   } else {
-                       $lines[$key] = strip_tags($line);
-                       if(strpos($lines[$key], 'to: ') !== false){
-                           $toFormat = substr($lines[$key], 4);
+                           $newWRAPs++;
+                       } else {
+                           $lines[$key] = strip_tags($line);
+                           if(strpos($lines[$key], 'to: ') !== false){
+                               $toFormat = substr($lines[$key], 4);
+                           }
                        }
                    }
                }

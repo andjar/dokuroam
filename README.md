@@ -3,7 +3,7 @@ DokuWiki based implementation of Roam Research. Roam Research has rapidly gained
 
 There are two main "spaces":
 * Note taking and todo: https://www.youtube.com/watch?v=7JOgkxssXks
-* Academic writing: https://www.youtube.com/watch?v=qu55V7LzdEI
+* Academic writing: https://youtu.be/VHGYJyvfZeo
 
 ## Features
 ### General

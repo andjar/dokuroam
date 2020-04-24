@@ -3,5 +3,5 @@
 
 
 ## Backlinks
-{{blinks>@ID@&permalink}}
+{{blinks>@ID@#note&permalink}}
 {{tag>notetopic}}

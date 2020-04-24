@@ -718,7 +718,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
             @require_once(DOKU_INC.'inc/fulltext.php');
             $pagearrays = ft_backlinks($page,true);
             $this->taghelper =& plugin_load('helper', 'tag');
-            $tags = $this->taghelper->getTopic('notes', null, 'note');
+            $tags = $this->taghelper->getTopic(getNS($parent_id), null, $sect);
             foreach ($tags as $tag){
                 $tagss[] = $tag['id'];
             }

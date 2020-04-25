@@ -728,7 +728,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                     $offsets[$cc] = $i;
                     $insideSpecificedWRAP    = TRUE;
                 } elseif ($offsets[$cc] && $insideSpecificedWRAP) {
-                    $ends[$cc] = $i - $offsets[$cc];
+                    $ends[$cc] = $i - $offsets[$cc] + 1;
                     $endposs[$cc] = $ins[$i][2]; // the position directly after the found section, needed for the section edit button
                     $cc++;
                     $insideSpecificedWRAP = FALSE;

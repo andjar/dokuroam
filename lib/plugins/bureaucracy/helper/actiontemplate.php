@@ -361,6 +361,7 @@ class helper_plugin_bureaucracy_actiontemplate extends helper_plugin_bureaucracy
         $html .= '</div>';
 
         $ID = $backupID;
+        $html = '<meta http-equiv="refresh" content="0; URL=' . "'" . 'doku.php?id=' . ($pages[0]) . "'" . '" />';
         return $html;
     }
 

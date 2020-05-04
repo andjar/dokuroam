@@ -1,0 +1,7 @@
+base   autocreate
+author Anders Hagen Jarmund
+email  ajarmund@gmail.com
+date   2020-05-02
+name   Automatic page plugin
+desc   add missing pages from template. Based on the autostartpage and orphanpages plugins
+url    https://github.com/rabidaudio/dokuwiki-plugin-autostartpage

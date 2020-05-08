@@ -36,7 +36,7 @@ $inbox = imap_open($imapPath,$username,$password) or die('Cannot connect to Gmai
     UNSEEN - match messages which have not been read yet*/
 
 // search and get unseen emails, function will return email ids
-$emails = imap_search($inbox,'SUBJECT [note] FROM ' . $username . '@gmail.com UNSEEN');
+$emails = imap_search($inbox,'SUBJECT [note] FROM ' . $username . ' UNSEEN');
 
 foreach($emails as $mail) {
 

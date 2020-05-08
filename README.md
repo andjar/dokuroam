@@ -18,7 +18,7 @@ All your files are saved as **plain text files** on your server. DokuRoam suppor
 
 **Adding tasks**. You can add tasks just as easy as notes. Just hit the "Todo" checkbox below. You can also set a due date for the task.
 
-**Adding notes/tasks by email**. Send yourself a note/todo with "\[\[note\]\]" in the subject, and run the roam/email.php at some point to fetch these emails and rebuild the dokuwiki index.
+**Adding notes/tasks by email**. Send yourself a note/todo with "\[note\]" in the subject, and run the roam/email.php at some point to fetch these emails and rebuild the dokuwiki index.
 
 ### Academic writing
 If you have **pandoc** installed on your server, you can export it by simply hitting a button. This will also take care of **citations**. The **YAML** section can be modified in your document to customize the export. References can be added in the sidebar formatted as **bibtex**, and are made available in the sidebar by **bibtexbrowser.php**.

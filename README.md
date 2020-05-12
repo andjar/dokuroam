@@ -5,6 +5,9 @@ There are two main "spaces":
 * Note taking and todo: https://www.youtube.com/watch?v=7JOgkxssXks
 * Academic writing: https://youtu.be/VHGYJyvfZeo
 
+In addition, you have a page for flashcards (fetched from your notes):
+* https://www.youtube.com/watch?v=pSdiAeKo-fE
+
 ## Features
 ### General
 All your files are saved as **plain text files** on your server. DokuRoam supports basic **markdown** syntax, and can include **media files**. Also, your pages has a complete **revision history** and drafts are **auto-saved**.
@@ -19,6 +22,8 @@ All your files are saved as **plain text files** on your server. DokuRoam suppor
 **Adding tasks**. You can add tasks just as easy as notes. Just hit the "Todo" checkbox below. You can also set a due date for the task.
 
 **Adding notes/tasks by email**. Send yourself a note/todo with "\[note\]" in the subject, and run the roam/email.php at some point to fetch these emails and rebuild the dokuwiki index.
+
+**Flashcards**. You can easily add flashcards while taking notes and rehearse as you want. You questions are visible within the note and edited from there.
 
 ### Academic writing
 If you have **pandoc** installed on your server, you can export it by simply hitting a button. This will also take care of **citations**. The **YAML** section can be modified in your document to customize the export. References can be added in the sidebar formatted as **bibtex**, and are made available in the sidebar by **bibtexbrowser.php**.

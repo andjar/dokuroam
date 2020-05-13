@@ -1,0 +1,266 @@
+/*
+ * This file is a part of Total Recall, the flash card webapp.
+ * Copyright Brady Bouchard 2010.
+ * Available at: http://github.com/brady8/total-recall
+ * See the README (README.markdown) for more information.
+ */
+
+body {
+  margin: auto;
+  width: 660px;
+  padding: 0;
+  font-family: Lato, sans-serif;
+  font-size: 62.5%;
+}
+
+a, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+#container {
+  width: 660px;
+  margin: auto;
+}
+
+/* Choose a study set. */
+h1 {
+  display: block;
+  margin: 40px auto 10px auto;
+  text-align: left;
+  font-size: 1.8em;
+  font-weight: normal;
+  font-weight: 300;
+  text-align: center;
+}
+
+#set-list {
+  margin: auto;
+  padding: 30px 30px 10px 30px;
+  border: 8px solid #3290fe;
+  font-size: 1.8em;
+}
+
+#set-list h2 {
+  margin: 0;
+  padding: 0;
+}
+
+#set-list ul {
+  text-align: center;
+  list-style-type: none;
+  font-size: 0.7em;
+  margin: 10px 0 20px 0;
+  padding: 0;
+}
+
+#set-list ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#set-list ul li a {
+  font-size: 1.4em;
+  display: block;
+  margin: 2px 30px;
+  padding: 3px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+#set-list ul li a:hover {
+  background-color: #f3f3f3;
+}
+
+.b1, .b2, .b3, .b5 {
+  width: 161px;
+  padding: 0;
+}
+
+.b1 { background-image: url(../images/1_button.gif); }
+.b2 { background-image: url(../images/2_button.gif); }
+.b3 { background-image: url(../images/3_button.gif); }
+.b5 { background-image: url(../images/5_button.gif); }
+
+/* Progress bar, and error bar in editing mode. */
+#progress-bar, #error-bar {
+  margin-top: 30px;
+  border: 1px solid #eee;
+  height: 2.5em;
+  line-height: 2.5em;
+  font-size: 1.7em;
+  font-weight: bold;
+  /*letter-spacing: 2px;*/
+  text-align: center;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+
+#progress-bar span {
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+/* Stop studying, and also used for the 'edit question' title. */
+#stop-it, #more-info {
+  margin-top: 20px;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+#stop-it a { color: #ccc; }
+#stop-it a:hover { border-bottom-color: #ccc; }
+#more-info { border-color: #333; }
+#more-info a { color: #333; }
+
+/* Question box. */
+#question-box, #answer-box { text-align: center; }
+#question-content, #answer-content, #more-info-content {
+  border: 8px solid;
+  padding: 20px;
+  font-size: 2.5em;
+  width: 604px;
+  display: table-cell;
+  vertical-align: middle;
+  height: 150px;
+}
+
+#question-content p, #answer-content p { margin: 0.5em; }
+#question-content { border-color: #3290fe; }
+#answer-content { border-color: #fa931e; }
+#answer-box { display: none; }
+#more-info-content { font-size: 1.9em; height: auto; border-color: #ff0043; }
+#more-info-content a, #more-info-content a:visited { color: #ff0043; }
+
+#question-content ul, #answer-content ul, #question-content ol, #answer-content ol {
+  margin: 0.5em auto;
+  display: inline-block;
+}
+
+#question-content * ul, #answer-content * ul, #question-content * ol, #answer-content * ol {
+  margin: 0 auto;
+  display: block;
+}
+
+
+#question-content li, #answer-content li {
+  text-align: left;
+  line-height: 1.3em;
+}
+
+/* You can include images in your question/answer pairs. */
+/* They are hidden by default, with Fancybox being used to display them when the link is clicked. */
+
+#question-content img, #answer-content img {
+  max-width: 150px;
+  max-height: 150px;
+  pointer: cursor;
+  margin: 0 auto;
+  padding: 4px;
+  background-color: #3290fe;
+}
+
+#question-content a.fancybox, #answer-content a.fancybox {
+  pointer: cursor;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 6px 9px 9px 9px;
+}
+
+#question-content a.fancybox { border: 4px solid #3290fe; }
+#answer-content a.fancybox { border: 4px solid #fa931e; }
+
+#question-content a.fancybox:hover { background-color: #B6D5FB; }
+#answer-content a.fancybox:hover { background-color: #F5D2AB; }
+
+/* Buttons. */
+#question-controls, #answer-controls, #edit-controls { margin-top: 10px; }
+
+.edit-button {
+  width: 161px;
+  height: 51px;
+  padding: 0;
+}
+
+#save-button { background-image: url(../images/save.gif); }
+#delete-button { background-image: url(../images/delete.gif); }
+#add-button { background-image: url(../images/add.gif); }
+
+/* Edit textarea boxes. */
+textarea {
+  margin: 0;
+  padding: 5px;
+  font-family: MyHelveticaNeue, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", VegurLight, sans-serif;
+  font-size: 0.8em;
+  width: 564px;
+  height: 160px;
+  text-align: center;
+  line-height: 1.3em;
+}
+
+#question-edit-content textarea { border: 8px solid #3290fe; }
+#answer-edit-content textarea { border: 8px solid #fa931e; }
+
+button {
+  padding: 15px 5px;
+  text-indent: -9999px;
+  border: none;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  height: 51px;
+}
+
+form,fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#show-answer {
+  width: 660px;
+  background-image: url(/images/show_answer_button.gif);
+}
+
+/* Navigation buttons (top right). */
+#nav-buttons {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px 20px;
+  font-size: 1.3em;
+}
+
+#nav-buttons div {
+  margin-left: 20px;
+  float: right;
+}
+
+#nav-buttons a {
+  color: #bbb;
+}
+
+#debug {
+  display: none;
+}
+
+#footer {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
+
+#footer a {
+  font-weight: bold;
+}

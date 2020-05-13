@@ -1,0 +1,7 @@
+base   flashit
+author Christopher Smith
+email  chris@jalakai.co.uk
+date   2016-02-02
+name   iframe plugin
+desc   Allows external URLs to be loaded into an iframe in your DokuWiki page.
+url    http://www.dokuwiki.org/plugin:iframe

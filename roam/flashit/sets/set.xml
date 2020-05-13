@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flashcards>
+<categories>
+<category name="All questions" order="1" id="1">
+<set name="Questions" id="1"/>
+</category>
+</categories>
+<cards>
+<card id="1">
+<question>What does the acronym **FAST** mean?
+</question>
+<answer>**F**ace Drooping; **A**rm Weakness; **S**peech; **T**ime to Call for Help
+</answer>
+<associated_sets>1</associated_sets>
+</card>
+<card id="2">
+<question>What are the two main types of stroke?
+</question>
+<answer>(1) **Ischemic** and (2) **hemorrhagic**
+</answer>
+<moreinfo>Bleeding only occurs in about 10-15% of the cases.
+</moreinfo>
+<associated_sets>1</associated_sets>
+</card>
+<card id="3">
+<question>What is the most important risk factor for having a stroke?
+</question>
+<answer>High blood pressure
+</answer>
+<moreinfo>Other risk factors include tobacco smoking, obesity, high blood cholesterol, diabetes mellitus, a previous TIA, end-stage kidney disease, and atrial fibrillation
+</moreinfo>
+<associated_sets>1</associated_sets>
+</card>
+
+</cards>
+</flashcards>

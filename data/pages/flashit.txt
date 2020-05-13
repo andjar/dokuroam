@@ -1,0 +1,2 @@
+~~NOCACHE~~
+{{url>http://www.example.com/somepage.html}}

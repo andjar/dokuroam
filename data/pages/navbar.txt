@@ -10,6 +10,7 @@ date('Y-m-d') .'>Today</a></li></ul>';
 echo '<li><a href = "' . wl('notes') . ':';
 echo date('Ymd-His');
 echo '&do=edit&newpagetemplate=tmplts_2">Add new</a></li>';
+echo '<li><a href = "' . wl('flashit') . '">Flash it</a></li>';
 echo '</ul>';
 </php>
 

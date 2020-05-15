@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Iframe: Inserts an iframe element to include the specified url
+ * Plugin flashit: Inserts an iframe element to include the specified url
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Christopher Smith <chris@jalakai.co.uk>
@@ -109,14 +109,22 @@ class syntax_plugin_flashit extends DokuWiki_Syntax_Plugin {
         $out_string = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
         $out_string .= '<flashcards>' . PHP_EOL;
         $out_string .= '<categories>' . PHP_EOL;
-        $out_string .= '<category name="All questions" order="1" id="1">' . PHP_EOL;
-        $out_string .= '<set name="Questions" id="1"/>' . PHP_EOL;
+        $out_string .= '<category name="Questions" order="1" id="1">' . PHP_EOL;
+        $out_string .= '<set name="All questions" id="1"/>' . PHP_EOL;
+        $pagenum = 2;
+        foreach($taggedPages as $page){
+            $page_title = p_get_metadata($page['id'], 'title', METADATA_DONT_RENDER);
+            $out_string .= '<set name="' . $page_title .'" id="' . $pagenum . '"/>' . PHP_EOL;
+            $pagenum++;
+        }
         $out_string .= '</category>' . PHP_EOL;
         $out_string .= '</categories>' . PHP_EOL;
         $out_string .= '<cards>' . PHP_EOL;
         $num = 1;
+        $pagenum = 2;
         foreach($taggedPages as $page){
-            $out_string .= $this->make_card($page['id'], $num) . PHP_EOL;
+            $out_string .= $this->make_card($page['id'], $num, $pagenum) . PHP_EOL;
+            $pagenum++;
         }
         $out_string .= '</cards>' . PHP_EOL;
         $out_string .= '</flashcards>';
@@ -125,7 +133,7 @@ class syntax_plugin_flashit extends DokuWiki_Syntax_Plugin {
         return true;
     }
     
-    function make_card($page, &$num){
+    function make_card($page, &$num, $pagenum){
         $page_content = file_get_contents(wikiFN($page));
         $parts = explode("\n", $page_content);
         $parts = new SplFileObject(wikiFN($page));
@@ -140,7 +148,7 @@ class syntax_plugin_flashit extends DokuWiki_Syntax_Plugin {
                 if(strpos($line, '</WRAP>') !== false){
                     if($insideQuestion == FALSE && $insideAnswer == FALSE && $insideMoreInfo == FALSE){
                         $insideWRAP = FALSE;
-                        $out_string .= $this->make_card_helper($num, $question, $answer, $moreinfo);
+                        $out_string .= $this->make_card_helper($num, $question, $answer, $moreinfo, $pagenum);
                         $num++;
                     }
                     if($insideQuestion){
@@ -185,14 +193,14 @@ class syntax_plugin_flashit extends DokuWiki_Syntax_Plugin {
         return $out_string;
     }
     
-    function make_card_helper($num, $question, $answer, $moreinfo){
+    function make_card_helper($num, $question, $answer, $moreinfo, $pagenum){
         $out_string = '<card id="' . $num . '">' . PHP_EOL;
         $out_string .= '<question>' . $question . '</question>' . PHP_EOL;
         $out_string .= '<answer>' . $answer . '</answer>' . PHP_EOL;
         if(strlen($moreinfo) > 1){
             $out_string .= '<moreinfo>' . $moreinfo .'</moreinfo>' . PHP_EOL;
         }
-        $out_string .= '<associated_sets>1</associated_sets>' . PHP_EOL;
+        $out_string .= '<associated_sets>1,' . $pagenum . '</associated_sets>' . PHP_EOL;
         $out_string .= '</card>' . PHP_EOL;
         return $out_string;
     }

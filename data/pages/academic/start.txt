@@ -1,5 +1,5 @@
 <form>
-action template articletemplate ":article:%Y%m%d_@@Title@@"
+action template articletemplate ":academic:%Y%m%d_@@Title@@"
 
 fieldset "New article"
 textbox "Title" !

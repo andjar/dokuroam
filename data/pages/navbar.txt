@@ -4,6 +4,7 @@ echo '<li><a href = "' . wl('start') . '">Home</a></li>';
 echo '<li><a href = "' . wl('todos') . '">Todos</a></li>';
 echo '<li><a href = "' . wl('notes:start') . '">Notes</a></li>';
 echo '<li><a href = "' . wl('topics') . '">Topics</a></li>';
+echo '<li><a href = "' . wl('academic:start') . '">Academic</a></li>';
 echo '<li><a href = "' . wl('journal:start') . '">Calendar</a></li>';
 echo '<ul><li><a href = "' . wl('journal:') . date('Ymd') . '&newpagetemplate=journal:tmplt&newpagevars=@tododate@%2C"' . 
 date('Y-m-d') .'>Today</a></li></ul>';

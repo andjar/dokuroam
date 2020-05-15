@@ -1,5 +1,5 @@
 base   flashit
-author Christopher Smith
+author Anders H. Jarmund
 email  chris@jalakai.co.uk
 date   2016-02-02
 name   iframe plugin

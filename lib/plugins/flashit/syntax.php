@@ -15,11 +15,11 @@ require_once(DOKU_PLUGIN.'syntax.php');
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
  */
-class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
+class syntax_plugin_flashit extends DokuWiki_Syntax_Plugin {
 
     function getType() { return 'substition'; }
     function getSort() { return 305; }
-    function connectTo($mode) { $this->Lexer->addSpecialPattern('{{url>.*?}}',$mode,'plugin_iframe'); }
+    function connectTo($mode) { $this->Lexer->addSpecialPattern('{{url>.*?}}',$mode,'plugin_flashit'); }
 
     function handle($match, $state, $pos, Doku_Handler $handler){
         $match = substr($match, 6, -2);

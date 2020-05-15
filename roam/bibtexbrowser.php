@@ -324,7 +324,7 @@ function _zetDB($bibtex_filenames) {
     // get file extension to only allow .bib files
     $ext = pathinfo($bib, PATHINFO_EXTENSION);
     // this is a security protection
-    if (BIBTEXBROWSER_LOCAL_BIB_ONLY && (!file_exists($bib) || strcasecmp($ext, 'bib') != 0 || strcasecmp($ext, 'txt') != 0)) {
+    if (BIBTEXBROWSER_LOCAL_BIB_ONLY && (!file_exists($bib) || (strcasecmp($ext, 'bib') != 0 && strcasecmp($ext, 'txt') != 0))) {
       // to automate dectection of faulty links with tools such as webcheck
       header('HTTP/1.1 404 Not found');
       // escape $bib to prevent XSS

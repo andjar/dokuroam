@@ -33,3 +33,29 @@
 .dokuwiki div.plugin_include_content div.wrap_exclude_totally{
     display: none;
 }
+
+.dokuwiki .wrap_flashit{
+    padding: 1em 1em .5em 70px;
+    margin-bottom: 1.5em;
+    min-height: 68px;
+    background-color: #dcc2ef;
+    background-image: url(/lib/plugins/wrap/images/note/48/help.png);
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.dokuwiki .wrap_flashit .wrap_question::before{
+    content: "Question:";
+    color: grey; 
+}
+
+.dokuwiki .wrap_flashit .wrap_answer::before{
+    content: "Answer:";
+    color: grey; 
+}
+
+.dokuwiki .wrap_flashit .wrap_moreinfo::before{
+    content: "More info:";
+    color: grey; 
+}

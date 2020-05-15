@@ -81,8 +81,24 @@ class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
                 $taggedPages = $tag->getTopic('notes', NULL, 'flashit');
             }
         }
+        $needUpdate = FALSE;
         
-        $this->make_card_page($taggedPages);
+        if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/roam/flashit/sets/created.txt') == TRUE){
+            $created_time = strtotime(file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/roam/flashit/sets/created.txt'));
+            foreach($taggedPages as $page){
+                $modified_date = p_get_metadata($page['id'], 'date', METADATA_DONT_RENDER);
+                if($modified_date['modified'] > $created_time){
+                    $needUpdate = TRUE;
+                    break;
+                }
+            }
+        }else{
+            $needUpdate = TRUE;
+        }
+        
+        if($needUpdate){
+            $this->make_card_page($taggedPages);   
+        }
 
         $R->doc .= '<iframe src="roam/flashit/index.php" height="600px" width="100%" style="border:none;"></iframe>';
         
@@ -105,6 +121,7 @@ class syntax_plugin_iframe extends DokuWiki_Syntax_Plugin {
         $out_string .= '</cards>' . PHP_EOL;
         $out_string .= '</flashcards>';
         file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/roam/flashit/sets/set.xml', $out_string);
+        file_put_contents($_SERVER['DOCUMENT_ROOT'] . '/roam/flashit/sets/created.txt', date('Y-m-d H:i:s'));
         return true;
     }
     

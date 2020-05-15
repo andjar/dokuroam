@@ -34,7 +34,7 @@ You can have the editing window in fullscreen for **distraction free** editing a
 
 First: I am not a professional programmer and my main goal is just making this functional. As I run this setup locally, offline and with just a single user, security is not my main priority. I therefore strongly advise you not to expose this setup to the internet without reviewing the changes that I have made and evaluated the risks yourself, and I will not take any responsibility for trouble that may arise. However, I hope you'll find it useful :)
 
-Clone this project and upload it to your server. Username and password are both "admin" and you should change this. These settings are set as default:
+**Clone this project and upload it to your server. Username and password are both "admin" (you should change this).** And that's it! Make sure to give writing permission to the data folder. These settings are set as default:
 
 * phpoksecurity -> Allow embedded PHP? **YES**
   * **Note that this may be a threat to security**, use with care

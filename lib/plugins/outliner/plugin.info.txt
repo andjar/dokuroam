@@ -1,0 +1,7 @@
+base   outliner
+author Michael Hamann
+email  michael@content-space.de
+date   2016-01-16
+name   Outliner Plugin
+desc   Allows collapsible outline layout
+url    http://www.dokuwiki.org/plugin:outliner

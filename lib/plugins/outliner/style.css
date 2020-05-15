@@ -1,0 +1,59 @@
+/* Whole outline block including left marker */
+dl.outliner {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+dl.outliner dt {
+  margin: 0.5em 0;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  background-color: __background_alt__;
+  border: 1px solid __border__;
+}
+
+dl.outliner-js dt {
+  cursor: pointer;
+}
+
+dl.outliner-js.outliner-closed > dt {
+  padding-left: 20px;
+  background: __background_alt__ url(closed.gif) 5px center no-repeat;
+}
+
+dl.outliner-js.outliner-open > dt {
+  padding-left: 20px;
+  background: __background_alt__ url(open.gif) 5px center no-repeat;
+}
+
+/* Outline block content */
+dl.outliner dd {
+  padding: 0 0 0 1.5em;
+  margin: 0;
+  border-left: 1px solid transparent;
+}
+
+dl.outliner:hover > dd {
+  border-left: 1px dotted __border__;
+}
+
+dl.outliner-closed > dd {
+   display: none;
+}
+
+dl.outliner-closed:hover > dd {
+  display: block;
+  position: absolute;
+  border: 1px solid __border__;
+  background-color: __background_alt__;
+  padding: 10px;
+}
+
+dl.outliner-closed:hover > dd dd {
+  position: static;
+}
+
+dl.outliner-closed.outliner-nopopup:hover > dd {
+  display: none;
+}
